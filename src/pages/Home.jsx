@@ -220,14 +220,33 @@ function Home() {
         <img 
           src="image4.png" 
           alt="10 LITTLE INDIANS OF SUCCESSFUL SCREENPLAYS" 
-          className="absolute inset-0 w-full h-full object-contain"
+          className="absolute inset-0 w-full h-full object-contain transition-opacity duration-300 group-hover:opacity-0"
         />
+
+        <div className="absolute inset-0 flex items-center justify-center">
+  <img
+    src="dickson-book2.gif"
+    alt="Book Preview"
+    className={`h-[70%] w-auto object-contain opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-xl ${
+      // Preload the GIF but keep it hidden until hover
+      typeof window !== 'undefined' ? 'hidden group-hover:block' : ''
+    }`}
+    // Preload the GIF
+    onLoad={(e) => {
+      // Force GIF to load by creating a new Image object
+      const img = new Image();
+      img.src = e.target.src;
+    }}
+  />
+  {/* Static fallback image that disappears on hover */}
+  <img 
+    src="image4.png" 
+    alt="THE 10 LITTLE INDIANS OF SUCCESSFUL SCREENPLAYS" 
+    className="absolute inset-0 w-full h-full object-contain transition-opacity duration-300 group-hover:opacity-0"
+  />
+</div>
         
-        <div className="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-          <div className="bg-white/20 backdrop-blur-sm rounded-full p-4 border-2 border-white/30">
-            <FaPlay className="text-white text-2xl" />
-          </div>
-        </div>
+        
       </div>
     </div>
   </div>
