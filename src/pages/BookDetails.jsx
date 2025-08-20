@@ -96,7 +96,7 @@ function BookNewsDetails() {
         {/* Book Card */}
         <div className="bg-white rounded-xl shadow-2xl overflow-hidden">
           {/* Book Header */}
-          <div className="bg-gradient-to-r from-amber-900 to-amber-700 p-8 text-white">
+          <div className="bg-gradient-to-r from-blue-900 to-blue-700 p-8 text-white">
             <h1 className="text-3xl md:text-4xl font-bold mb-2 font-serif tracking-wide">{book.title}</h1>
             <p className="text-amber-200 text-lg mb-1">by {book.author}</p>
             <p className="text-amber-300 text-sm">{book.postDate}</p>
@@ -111,9 +111,9 @@ function BookNewsDetails() {
                   <img 
                     src={book.image} 
                     alt={book.title} 
-                    className="w-full h-auto rounded-lg shadow-lg transform group-hover:scale-105 transition-transform duration-500 border-4 border-amber-100"
+                    className="w-full h-auto rounded-lg shadow-lg transform group-hover:scale-105 transition-transform duration-500 border-4 border-blue-100"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-lg" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-white/30 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-lg" />
                 </div>
               </div>
 
@@ -126,12 +126,12 @@ function BookNewsDetails() {
 
                 {/* Review Quote */}
                 <div className="relative bg-amber-50 p-6 rounded-lg border-l-4 border-amber-500 mb-8">
-                  <FaQuoteLeft className="text-amber-300 text-3xl absolute top-4 left-4" />
+                  <FaQuoteLeft className="text-blue-300 text-3xl absolute top-4 left-4" />
                   <p className="text-gray-700 italic pl-10 pr-4">{book.quote}</p>
                 </div>
 
                 {/* Read More */}
-                <button className="text-amber-700 hover:text-amber-900 font-medium flex items-center transition-colors duration-300">
+                <button className="text-blue-700 hover:text-blue-900 font-medium flex items-center transition-colors duration-300">
                   Read more
                   <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
@@ -142,15 +142,15 @@ function BookNewsDetails() {
 
             {/* About Author Section */}
             <div className="mt-12 bg-gray-50 p-6 rounded-xl">
-              <h3 className="text-xl font-bold text-gray-800 mb-4 font-serif border-b-2 border-amber-200 pb-2">About The Author</h3>
+              <h3 className="text-xl font-bold text-gray-800 mb-4 font-serif border-b-2 border-blue-200 pb-2">About The Author</h3>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 {book.relatedTopics.map((topic, index) => (
                   <div key={index} className="group cursor-pointer">
-                    <div className="flex items-center justify-between p-4 hover:bg-amber-50 rounded-lg transition-colors duration-300">
+                    <div className="flex items-center justify-between p-4 hover:bg-blue-50 rounded-lg transition-colors duration-300">
                       <div>
                         <h4 className="font-medium text-gray-800">{topic.title}</h4>
                       </div>
-                      <span className="text-amber-600 group-hover:text-amber-800 transition-colors duration-300">
+                      <span className="text-blue-600 group-hover:text-blue-800 transition-colors duration-300">
                         {topic.link}
                       </span>
                     </div>
@@ -161,7 +161,7 @@ function BookNewsDetails() {
 
             {/* Related Books */}
             <div className="mt-12">
-              <h3 className="text-xl font-bold text-gray-800 mb-6 font-serif border-b-2 border-amber-200 pb-2">More Books</h3>
+              <h3 className="text-xl font-bold text-gray-800 mb-6 font-serif border-b-2 border-blue-200 pb-2">More Books</h3>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                 {mockBooks.filter(b => b.id !== id).slice(0, 2).map(relatedBook => (
                   <div 
@@ -172,7 +172,7 @@ function BookNewsDetails() {
                     <div className="p-4">
                       <h4 className="font-bold text-gray-800 mb-2">{relatedBook.title}</h4>
                       <p className="text-gray-600 text-sm mb-3 line-clamp-2">{relatedBook.description}</p>
-                      <div className="flex items-center text-amber-600 text-sm">
+                      <div className="flex items-center text-blue-600 text-sm">
                         <FaBookOpen className="mr-2" />
                         <span>View details</span>
                       </div>

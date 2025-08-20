@@ -7,33 +7,59 @@ const galleryImages = [
   {
     id: 1,
     src: "gallery1.png",
-    title: "At Oxford University",
-    description: "Dickson lecturing at his alma mater"
+    // title: "At Oxford University",
+    // description: "Dickson lecturing at his alma mater"
   },
   {
     id: 2,
     src: "gallery2.png",
-    title: "Book Signing Event",
-    description: "Meeting readers in London"
+    // title: "Book Signing Event",
+    // description: "Meeting readers in London"
   },
   {
     id: 3,
     src: "gallery3.png",
-    title: "Writing Retreat",
-    description: "Working on his latest novel"
+    // title: "Writing Retreat",
+    // description: "Working on his latest novel"
   },
   {
     id: 4,
     src: "gallery4.png",
-    title: "Published Works",
-    description: "Collection of Dickson's books"
+    // title: "Published Works",
+    // description: "Collection of Dickson's books"
   },
   {
     id: 5,
     src: "gallery5.png",
-    title: "Morning Routine",
-    description: "Reading with coffee at his home office"
-  }
+    // title: "Morning Routine",
+    // description: "Reading with coffee at his home office"
+  },
+  {
+    id: 6,
+    src: "gallery6.png",
+    // title: "Literary Festival",
+    // description: "Speaking at a literary event"
+  },
+  {
+    id: 7,
+    src: "gallery7.png",
+    // title: "On Set",
+    // description: "Filming a documentary about his life"
+  },
+  {
+    id: 8,
+    src: "gallery8.png",
+    // title: "With Fans",
+    // description: "Engaging with readers at a book fair"
+  },
+  {
+    id: 9,
+    src: "gallery9.png",
+    // title: "Inspiration",
+    // description: "Nature walk that sparked a new story idea"
+  },
+  
+
 ];
 
 // ===== Gallery Component =====

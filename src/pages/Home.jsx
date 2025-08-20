@@ -67,7 +67,7 @@ function Home() {
             poster="fallback-image.jpg" // Shows while video loads
           >
             <source src="videobg1.mp4" type="video/mp4" />
-            <source src="videobg1.webm" type="video/webm" /> {/* Alternative format */}
+            {/* <source src="videobg1.webm" type="video/webm" /> Alternative format */}
             
             {/* Fallback for browsers that don't support video */}
             <div 
@@ -471,10 +471,10 @@ function Home() {
           
           <form className="flex flex-col sm:flex-row gap-4 max-w-lg mx-auto">
             <input 
-              type="email" 
-              placeholder="Your email address" 
-              className="flex-1 px-5 py-3 rounded-full border-none focus:outline-none focus:ring-2 focus:ring-blue-300 text-gray-900"
-              required
+               type="email" 
+               placeholder="Your email address" 
+               className="flex-1 px-5 py-3 rounded-full border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-300 text-gray-900"
+               required
             />
             <button 
               type="submit" 
@@ -503,11 +503,10 @@ function Home() {
           <div>
             <h4 className="text-lg font-bold mb-4">Explore</h4>
             <ul className="space-y-2">
-              <li><a href="#" className="text-gray-400 hover:text-white transition-colors">Books</a></li>
-              <li><a href="#" className="text-gray-400 hover:text-white transition-colors">eBooks</a></li>
-              <li><a href="#" className="text-gray-400 hover:text-white transition-colors">Audiobooks</a></li>
-              <li><a href="#" className="text-gray-400 hover:text-white transition-colors">Bestsellers</a></li>
-              <li><a href="#" className="text-gray-400 hover:text-white transition-colors">New Releases</a></li>
+              <li><a href="/bookshop" className="text-gray-400 hover:text-white transition-colors">Books</a></li>
+              <li><a href="/ebooks" className="text-gray-400 hover:text-white transition-colors">eBooks</a></li>
+              <li><a href="/audiobooks" className="text-gray-400 hover:text-white transition-colors">Audiobooks</a></li>
+              
             </ul>
           </div>
           
@@ -515,9 +514,6 @@ function Home() {
             <h4 className="text-lg font-bold mb-4">Company</h4>
             <ul className="space-y-2">
               <li><a href="#" className="text-gray-400 hover:text-white transition-colors">About Us</a></li>
-              <li><a href="#" className="text-gray-400 hover:text-white transition-colors">Our Team</a></li>
-              <li><a href="#" className="text-gray-400 hover:text-white transition-colors">Careers</a></li>
-              <li><a href="#" className="text-gray-400 hover:text-white transition-colors">Blog</a></li>
               <li><a href="#" className="text-gray-400 hover:text-white transition-colors">Contact</a></li>
             </ul>
           </div>
@@ -525,7 +521,7 @@ function Home() {
           <div>
             <h4 className="text-lg font-bold mb-4">Connect</h4>
             <div className="flex gap-4 mb-4">
-              {['Facebook', 'Twitter', 'Instagram', 'LinkedIn'].map((social) => (
+              {/* {['Facebook', 'Twitter', 'Instagram', 'LinkedIn'].map((social) => (
                 <a 
                   key={social} 
                   href="#" 
@@ -534,7 +530,7 @@ function Home() {
                 >
                   <span className="sr-only">{social}</span>
                 </a>
-              ))}
+              ))} */}
             </div>
             <p className="text-gray-400 text-sm">
               123 Book Street, Literary City, LC 12345
