@@ -9,8 +9,8 @@ const ebooks = [
     image: "/image1.png",
     rating: 4.5,
     formats: ["PDF", "EPUB", "MOBI"],
-    description:
-      "A haunting exploration of gender empowerment across native cultures in 19th century Canada.",
+    description: "A haunting exploration of gender empowerment across native cultures in 19th century Canada.",
+      
     comingSoon: true,
   },
   {
@@ -21,8 +21,7 @@ const ebooks = [
     image: "/image4.png",
     rating: 4.2,
     formats: ["PDF", "EPUB"],
-    description:
-      "Learn from the Masters of Moviemaking about writing screenplays.",
+    description: "Learn from the Masters of Moviemaking about writing screenplays.",
     comingSoon: false,
   },
 ];
@@ -194,10 +193,11 @@ export default function EBookShop() {
             Subscribe to our newsletter for exclusive free chapters and updates.
           </p>
           <div className="max-w-md mx-auto flex flex-col sm:flex-row gap-3">
-            <input
-              type="email"
-              placeholder="Enter your email"
-              className="flex-grow px-4 py-3 rounded-lg text-gray-800 focus:ring-2 focus:ring-indigo-400 outline-none"
+            <input 
+               type="email" 
+               placeholder="Your email address" 
+               className="flex-1 px-5 py-3 rounded-full border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-300 text-gray-900"
+               required
             />
             <button className="px-6 py-3 bg-white text-indigo-700 font-semibold rounded-lg shadow hover:bg-gray-100 transition">
               Get Samples

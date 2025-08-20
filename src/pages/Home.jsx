@@ -253,242 +253,281 @@ function Home() {
 </section>
 
       {/* eBook Section */}
-      <section className="py-16 px-4 md:px-8 bg-gray-900 text-white">
-        <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4 font-serif">
-              Digital <span className="text-blue-400">Reading</span> Experience
-            </h2>
-            <p className="text-gray-300 max-w-2xl mx-auto">
-              Access your favorite books anytime, anywhere with our premium eBook collection
-            </p>
-          </div>
-          
-          <div className="flex flex-col md:flex-row items-center justify-center gap-8">
-            {/* Floating Book Animation */}
-            <div className="relative w-64 h-96 perspective-1000 mb-8 md:mb-0">
-              <div className="relative w-full h-full transform-style-preserve-3d transition-all duration-1000 hover:rotate-y-20">
-                <div className="absolute inset-0 bg-gradient-to-br from-blue-600 to-blue-800 rounded-l-lg shadow-2xl flex flex-col justify-center items-center text-center p-6 backface-hidden">
-                  <div className="absolute top-6 left-6 text-sm font-bold">YOUR BOOK</div>
-                  <h2 className="text-2xl my-4 font-extrabold">GETTING STARTED</h2>
-                  <p className="text-blue-200 text-sm mb-6">TITLE HERE</p>
-                  <div className="w-4/5 h-px bg-white/30 my-4"></div>
-                  <div className="flex flex-col gap-3 w-full">
-                    <button className="bg-white text-blue-600 border-none py-2 rounded font-semibold text-sm hover:bg-gray-100 transition-colors">
-                      GET ACCESS
-                    </button>
-                    <button className="bg-transparent text-white border-2 border-white py-2 rounded font-semibold text-sm hover:bg-white/10 transition-colors">
-                      COURSE
-                    </button>
-                  </div>
-                </div>
-                <div className="absolute inset-0 bg-gradient-to-br from-blue-700 to-blue-900 rounded-r-lg shadow-2xl backface-hidden transform rotate-y-180 flex items-center justify-center">
-                  <div className="text-center p-6">
-                    <h3 className="text-xl font-bold mb-3">eBook Features</h3>
-                    <ul className="text-sm space-y-2">
-                      <li>✓ Interactive Content</li>
-                      <li>✓ Adjustable Text</li>
-                      <li>✓ Night Mode</li>
-                      <li>✓ Sync Across Devices</li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-            </div>
-            
-            <div className="max-w-md">
-              <h3 className="text-2xl font-bold mb-4">Why Choose Our eBooks?</h3>
-              <ul className="space-y-4">
-                <li className="flex items-start">
-                  <div className="bg-blue-600 rounded-full p-2 mr-4">
-                    <svg className="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path>
-                    </svg>
-                  </div>
-                  <span>Instant access to thousands of titles</span>
-                </li>
-                <li className="flex items-start">
-                  <div className="bg-blue-600 rounded-full p-2 mr-4">
-                    <svg className="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path>
-                    </svg>
-                  </div>
-                  <span>Read on any device, online or offline</span>
-                </li>
-                <li className="flex items-start">
-                  <div className="bg-blue-600 rounded-full p-2 mr-4">
-                    <svg className="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path>
-                    </svg>
-                  </div>
-                  <span>Personalized reading recommendations</span>
-                </li>
-                <li className="flex items-start">
-                  <div className="bg-blue-600 rounded-full p-2 mr-4">
-                    <svg className="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path>
-                    </svg>
-                  </div>
-                  <span>Exclusive digital content and updates</span>
-                </li>
-              </ul>
-              <button className="mt-6 bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-lg font-medium transition-all">
-                Explore eBook Collection
-              </button>
-            </div>
-          </div>
-        </div>
-      </section>
+     <section className="relative py-20 px-4 md:px-8 bg-gradient-to-br from-gray-950 via-gray-900 to-gray-800 text-white overflow-hidden">
+  {/* Decorative light effects */}
+  <div className="absolute inset-0">
+    <div className="absolute top-20 left-1/3 w-72 h-72 bg-blue-500/20 blur-3xl rounded-full"></div>
+    <div className="absolute bottom-20 right-1/3 w-72 h-72 bg-purple-500/20 blur-3xl rounded-full"></div>
+  </div>
 
-      {/* Audiobooks Section */}
-      <section className="relative py-20 px-4 md:px-8 overflow-hidden">
-        <div className="absolute inset-0 bg-black/90 z-0">
-          <div className="absolute inset-0 opacity-30 bg-[url('noise-pattern.png')]"></div>
-        </div>
-        <div className="max-w-7xl mx-auto relative z-10 text-center">
-          <h2 className="text-3xl md:text-5xl font-bold text-white mb-4 font-serif">
-            Immersive <span className="text-blue-400">Audio</span> Experiences
-          </h2>
-          <h3 className="text-xl md:text-2xl text-blue-400 font-medium mb-8">
-            Listen to Stories Come Alive
-          </h3>
-          <p className="text-gray-300 max-w-3xl mx-auto mb-8 text-lg">
-            From timeless classics to modern masterpieces, our audio books bring stories to life with professional narration and soundscapes.
-          </p>
-          
-          <div className="flex flex-wrap justify-center gap-6 mb-12">
-            {['Fiction', 'Non-Fiction', 'Biography', 'Self-Help', 'Mystery', 'Sci-Fi'].map((genre) => (
-              <div key={genre} className="bg-white/10 backdrop-blur-sm rounded-full px-6 py-2 text-white border border-white/20 hover:bg-blue-600/50 hover:border-blue-400 transition-all cursor-pointer">
-                {genre}
-              </div>
-            ))}
-          </div>
-          
-          <div className="bg-gradient-to-r from-blue-600/30 to-purple-600/30 rounded-xl p-8 max-w-4xl mx-auto backdrop-blur-sm border border-white/10">
-            <div className="flex items-center justify-center gap-6 mb-6">
-              <button className="bg-white text-blue-600 rounded-full p-4 hover:scale-110 transition-transform">
-                <FaChevronLeft />
-              </button>
-              <div className="w-24 h-24 bg-blue-500 rounded-full flex items-center justify-center shadow-lg">
-                <FaPlay className="text-white text-2xl" />
-              </div>
-              <button className="bg-white text-blue-600 rounded-full p-4 hover:scale-110 transition-transform">
-                <FaChevronRight />
-              </button>
-            </div>
-            <div className="text-left">
-              <h4 className="text-xl font-bold text-white mb-2">Currently Playing</h4>
-              <p className="text-blue-300 mb-4">The Ghost Walker - Chapter 5</p>
-              <div className="w-full bg-gray-700 rounded-full h-2 mb-2">
-                <div className="bg-blue-500 h-2 rounded-full" style={{width: '45%'}}></div>
-              </div>
-              <div className="flex justify-between text-sm text-gray-400">
-                <span>12:45</span>
-                <span>27:30</span>
-              </div>
-            </div>
-          </div>
-          
-          <button className="mt-10 bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 rounded-full font-medium transition-all transform hover:scale-105 shadow-lg">
-            Browse Audiobook Library
-          </button>
-        </div>
-      </section>
-
-      {/* About Us Carousel */}
-      <section className="py-16 px-4 md:px-8 bg-gray-50">
-  <div className="max-w-7xl mx-auto">
-    <div className="text-center mb-12">
-      <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4 font-serif">
-        Get to Know <span className="text-blue-600">Dickson Lane</span>
+  <div className="max-w-5xl mx-auto relative z-10">
+    {/* Title Section */}
+    <div className="text-center mb-16">
+      <h2 className="text-4xl md:text-5xl font-extrabold tracking-tight mb-6 font-serif">
+        Digital <span className="text-blue-400">Reading</span> Experience
       </h2>
-      <p className="text-gray-600 max-w-2xl mx-auto">
-        Discover what makes our bookstore special and why readers keep coming back
+      <p className="text-gray-300 text-lg max-w-2xl mx-auto">
+        Access your favorite books anytime, anywhere with our immersive eBook platform.
       </p>
     </div>
-    
-    <div className="relative overflow-hidden rounded-2xl shadow-lg">
-      <div className="flex transition-transform duration-500 ease-in-out" style={{ transform: `translateX(-${currentSlide * 100}%)` }}>
-        {slides.map((slide, index) => (
-          <div key={index} className="flex-none w-full">
-            <div className={`h-96 md:h-[500px] bg-gradient-to-r ${slide.color} flex flex-col md:flex-row items-center p-8 md:p-12`}>
-              <div className="w-full md:w-1/2 mb-8 md:mb-0 flex justify-center">
-                <img 
-                  src={slide.image} 
-                  alt={slide.title} 
-                  className="max-h-64 md:max-h-80 object-contain drop-shadow-2xl"
-                />
-              </div>
-              <div className="w-full md:w-1/2 text-white">
-                <h3 className="text-2xl md:text-3xl font-bold mb-4">{slide.title}</h3>
-                <p className="text-lg md:text-xl mb-6">{slide.text}</p>
-                <button className="bg-white/20 hover:bg-white/30 backdrop-blur-sm px-6 py-2 rounded-full border border-white/30 transition-all">
-                  Learn More
-                </button>
-              </div>
+
+    <div className="flex flex-col md:flex-row items-center justify-center gap-12">
+      {/* Floating Book Card */}
+      <div className="relative w-64 h-96 group">
+        <div className="absolute inset-0 rounded-xl shadow-2xl transform rotate-y-0 group-hover:rotate-y-12 transition-transform duration-700 perspective-1000">
+          <div className="absolute inset-0 bg-gradient-to-br from-blue-700 to-blue-900 rounded-xl flex flex-col justify-between p-6 shadow-2xl">
+            <div>
+              <p className="text-xs uppercase tracking-wide text-blue-200 mb-3">Your Book</p>
+              <h3 className="text-2xl font-bold mb-2">Getting Started</h3>
+              <p className="text-blue-100 text-sm">Subtitle or Author Name</p>
+            </div>
+            <div className="space-y-3">
+              <button className="w-full bg-white text-blue-700 font-semibold py-2 rounded-lg hover:bg-gray-100 transition">
+                Get Access
+              </button>
+              <button className="w-full border border-white text-white py-2 rounded-lg font-semibold hover:bg-white/10 transition">
+                Preview
+              </button>
             </div>
           </div>
-        ))}
+        </div>
       </div>
-      
-      {/* Previous Button */}
-      <button 
-        onClick={() => setCurrentSlide(prev => (prev - 1 + slides.length) % slides.length)}
-        className="absolute left-4 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-white text-gray-800 rounded-full w-10 h-10 flex items-center justify-center shadow-md z-10"
-      >
-        <FaChevronLeft />
-      </button>
-      
-      {/* Next Button */}
-      <button 
-        onClick={() => setCurrentSlide(prev => (prev + 1) % slides.length)}
-        className="absolute right-4 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-white text-gray-800 rounded-full w-10 h-10 flex items-center justify-center shadow-md z-10"
-      >
-        <FaChevronRight />
-      </button>
-      
-      {/* Dot Indicators */}
-      <div className="absolute bottom-4 left-0 right-0 flex justify-center gap-2">
-        {slides.map((_, index) => (
-          <button
-            key={index}
-            onClick={() => setCurrentSlide(index)}
-            className={`w-3 h-3 rounded-full transition-all ${index === currentSlide ? 'bg-white w-6' : 'bg-white/50'}`}
-          />
-        ))}
+
+      {/* Right Side Content */}
+      <div className="max-w-md">
+        <h3 className="text-3xl font-bold mb-6">Why Choose Our eBooks?</h3>
+        <ul className="space-y-5">
+          {[
+            "Instant access to thousands of titles",
+            "Read on any device, online or offline",
+            "Personalized reading recommendations",
+            "Exclusive digital content and updates",
+          ].map((text, idx) => (
+            <li key={idx} className="flex items-start">
+              <div className="bg-blue-600 rounded-full p-2 mr-4 shadow-lg shadow-blue-500/30">
+                <svg
+                  className="w-5 h-5 text-white"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth="2"
+                    d="M5 13l4 4L19 7"
+                  />
+                </svg>
+              </div>
+              <span className="text-gray-200">{text}</span>
+            </li>
+          ))}
+        </ul>
+        <button className="mt-8 bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 rounded-lg font-medium shadow-lg shadow-blue-500/30 transition">
+          Explore eBook Collection
+        </button>
       </div>
     </div>
   </div>
 </section>
 
-      {/* Newsletter Section */}
-      <section className="py-16 px-4 md:px-8 bg-gradient-to-br from-blue-600 to-blue-800 text-white">
-        <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4 font-serif">Join Our Literary Community</h2>
-          <p className="text-xl mb-8 max-w-2xl mx-auto">
-            Subscribe to receive updates on new releases, exclusive offers, and literary events
-          </p>
-          
-          <form className="flex flex-col sm:flex-row gap-4 max-w-lg mx-auto">
-            <input 
-               type="email" 
-               placeholder="Your email address" 
-               className="flex-1 px-5 py-3 rounded-full border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-300 text-gray-900"
-               required
-            />
-            <button 
-              type="submit" 
-              className="bg-white text-blue-600 px-6 py-3 rounded-full font-semibold hover:bg-gray-100 transition-colors shadow-md"
-            >
-              Subscribe
-            </button>
-          </form>
-          
-          <p className="text-sm text-blue-200 mt-4">
-            We respect your privacy. Unsubscribe at any time.
-          </p>
+      {/* Audiobooks Section */}
+      <section className="relative py-20 px-4 md:px-6 overflow-hidden bg-gradient-to-br from-gray-900 via-black to-gray-950">
+  {/* Background with glow & texture */}
+  <div className="absolute inset-0">
+    <div className="absolute inset-0 bg-[url('/noise-pattern.png')] opacity-20"></div>
+    <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[600px] bg-blue-600/30 rounded-full blur-[120px]"></div>
+    <div className="absolute bottom-0 right-1/4 w-[400px] h-[400px] bg-purple-600/20 rounded-full blur-[100px]"></div>
+  </div>
+
+  <div className="relative z-10 max-w-3xl mx-auto text-center">
+    {/* Heading */}
+    <h2 className="text-3xl md:text-5xl font-extrabold text-white mb-6 tracking-tight">
+      Immersive <span className="bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">Audio</span> Experiences
+    </h2>
+    <p className="text-base md:text-lg text-gray-300 mb-10 leading-relaxed">
+      Discover audiobooks that <span className="text-blue-400">captivate your imagination</span> and bring stories to life through <span className="text-purple-400">powerful narration</span>.
+    </p>
+
+    {/* Genre Tags */}
+    {/* <div className="flex flex-wrap justify-center gap-3 mb-10">
+      {['Fiction', 'Non-Fiction', 'Biography', 'Self-Help', 'Mystery', 'Sci-Fi'].map((genre) => (
+        <span
+          key={genre}
+          className="px-5 py-1.5 rounded-full bg-white/10 border border-white/20 text-white text-sm backdrop-blur-sm hover:bg-gradient-to-r hover:from-blue-500/40 hover:to-purple-500/40 hover:border-blue-400 transition-all cursor-pointer"
+        >
+          {genre}
+        </span>
+      ))}
+    </div> */}
+
+    {/* Audio Player Card */}
+    <div className="relative bg-white/5 backdrop-blur-xl rounded-2xl p-8 mx-auto border border-white/10 shadow-xl max-w-lg">
+      {/* Player Controls */}
+      <div className="flex items-center justify-center gap-6 mb-6">
+        <button className="bg-white/10 hover:bg-blue-600 text-white rounded-full p-3 hover:scale-110 transition-transform">
+          <FaChevronLeft />
+        </button>
+        <div className="w-20 h-20 bg-gradient-to-tr from-blue-600 to-purple-600 rounded-full flex items-center justify-center shadow-[0_0_20px_rgba(59,130,246,0.6)]">
+          <FaPlay className="text-white text-2xl ml-1" />
         </div>
-      </section>
+        <button className="bg-white/10 hover:bg-blue-600 text-white rounded-full p-3 hover:scale-110 transition-transform">
+          <FaChevronRight />
+        </button>
+      </div>
+
+      {/* Track Info */}
+      <div className="text-left">
+        <h4 className="text-lg font-semibold text-white mb-1">Now Playing</h4>
+        <p className="text-blue-300 mb-4 text-sm">The Ghost Walker — Chapter 5</p>
+
+        {/* Progress Bar */}
+        <div className="w-full bg-gray-800 rounded-full h-1.5 overflow-hidden mb-2">
+          <div className="bg-gradient-to-r from-blue-500 to-purple-500 h-1.5 rounded-full" style={{ width: '45%' }}></div>
+        </div>
+        <div className="flex justify-between text-xs text-gray-400">
+          <span>12:45</span>
+          <span>27:30</span>
+        </div>
+      </div>
+    </div>
+
+    {/* CTA Button */}
+    <button className="mt-10 bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white px-8 py-3 rounded-full font-medium transition-all transform hover:scale-105 shadow-lg shadow-blue-600/30">
+      Browse Audiobook Library
+    </button>
+  </div>
+</section>
+
+
+      {/* About Us Carousel */}
+     <section className="relative py-24 px-6 md:px-12 bg-[url('/bookstore-bg.jpg')] bg-cover bg-center">
+  {/* Overlay */}
+  <div className="absolute inset-0 bg-black/50"></div>
+
+  <div className="relative max-w-7xl mx-auto">
+    {/* Heading */}
+    <div className="text-center mb-16">
+      <h2 className="text-4xl md:text-5xl font-bold text-white drop-shadow-lg">
+        Welcome to <span className="text-amber-400">Dickson Lane</span>
+      </h2>
+      <p className="text-gray-200 text-lg mt-4 max-w-2xl mx-auto">
+        A cozy bookstore where stories come alive and community thrives.
+      </p>
+    </div>
+
+    {/* Carousel */}
+    <div className="relative overflow-hidden rounded-2xl shadow-2xl">
+      <div
+        className="flex transition-transform duration-700 ease-in-out"
+        style={{ transform: `translateX(-${currentSlide * 100}%)` }}
+      >
+        {slides.map((slide, index) => (
+          <div key={index} className="flex-none w-full">
+            <div
+              className={`flex flex-col md:flex-row items-center h-[500px] p-10
+              ${index % 3 === 0 ? "bg-gradient-to-r from-amber-100 to-amber-300" : ""}
+              ${index % 3 === 1 ? "bg-gradient-to-r from-indigo-100 to-indigo-300" : ""}
+              ${index % 3 === 2 ? "bg-gradient-to-r from-emerald-100 to-emerald-300" : ""}`}
+            >
+              {/* Image */}
+              <div className="w-full md:w-1/2 flex justify-center">
+                <img
+                  src={slide.image}
+                  alt={slide.title}
+                  className="rounded-lg shadow-lg max-h-80 object-cover hover:scale-105 transition-transform duration-500"
+                />
+              </div>
+
+              {/* Text Content */}
+              <div className="w-full md:w-1/2 mt-10 md:mt-0 md:pl-10 text-gray-900">
+                <h3 className="text-3xl md:text-4xl font-bold mb-4">
+                  {slide.title}
+                </h3>
+                <p className="text-lg text-gray-700 mb-6 leading-relaxed">
+                  {slide.text}
+                </p>
+                {/* <button className="bg-gray-900 hover:bg-gray-800 text-white px-7 py-3 rounded-md font-medium shadow-md transition">
+                  Learn More
+                </button> */}
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+
+      {/* Navigation Arrows */}
+      <button
+        onClick={() =>
+          setCurrentSlide((prev) => (prev - 1 + slides.length) % slides.length)
+        }
+        className="absolute left-4 top-1/2 -translate-y-1/2 bg-gray-900/80 hover:bg-gray-900 text-white rounded-full w-12 h-12 flex items-center justify-center shadow-lg transition"
+      >
+        <FaChevronLeft />
+      </button>
+      <button
+        onClick={() => setCurrentSlide((prev) => (prev + 1) % slides.length)}
+        className="absolute right-4 top-1/2 -translate-y-1/2 bg-gray-900/80 hover:bg-gray-900 text-white rounded-full w-12 h-12 flex items-center justify-center shadow-lg transition"
+      >
+        <FaChevronRight />
+      </button>
+
+      {/* Dots */}
+      {/* <div className="absolute bottom-6 left-0 right-0 flex justify-center gap-3">
+        {slides.map((_, index) => (
+          <button
+            key={index}
+            onClick={() => setCurrentSlide(index)}
+            className={`w-3 h-3 rounded-full transition-all ${
+              index === currentSlide
+                ? "bg-gray-900 w-6"
+                : "bg-gray-500 hover:bg-gray-600"
+            }`}
+          />
+        ))}
+      </div> */}
+    </div>
+  </div>
+</section>
+
+
+      {/* Newsletter Section */}
+     <section className="relative py-20 px-6 md:px-12 bg-gradient-to-br from-[#f8f5f2] via-[#f3ede7] to-[#e9e2db]">
+  <div className="max-w-3xl mx-auto text-center">
+    {/* Title */}
+    <h2 className="text-4xl md:text-5xl font-bold mb-6 font-serif text-[#3e2c2c]">
+      Join Our <span className="text-[#8b6f56]">Literary Community</span>
+    </h2>
+
+    {/* Subtitle */}
+    <p className="text-lg md:text-xl mb-10 text-[#5a463b] leading-relaxed max-w-2xl mx-auto">
+      Stay inspired with <span className="text-[#8b6f56]">new releases</span>, 
+      enjoy <span className="text-[#a9896d]">exclusive offers</span>, and discover upcoming 
+      <span className="text-[#6f5b4e]"> literary events</span>.
+    </p>
+
+    {/* Form */}
+    <form className="flex flex-col sm:flex-row gap-4 max-w-xl mx-auto">
+      <input
+        type="email"
+        placeholder="Enter your email address"
+        className="flex-1 px-6 py-4 rounded-full border border-[#d6cfc7] focus:outline-none focus:ring-2 focus:ring-[#b8a99a] text-gray-800 bg-[#fdfcfb] shadow-sm"
+        required
+      />
+      <button
+        type="submit"
+        className="bg-gradient-to-r from-[#c2a386] to-[#a9896d] hover:from-[#b89577] hover:to-[#8b6f56] text-white px-8 py-4 rounded-full font-semibold shadow-md transition"
+      >
+        Subscribe
+      </button>
+    </form>
+
+    {/* Privacy note */}
+    <p className="text-sm text-[#8b6f56] mt-6 italic">
+      ✦ We respect your privacy. Unsubscribe anytime.
+    </p>
+  </div>
+</section>
 
       {/* Footer */}
       <footer className="bg-gray-900 text-white py-12 px-4 md:px-8">
@@ -519,7 +558,7 @@ function Home() {
           </div>
           
           <div>
-            <h4 className="text-lg font-bold mb-4">Connect</h4>
+            <h4 className="text-lg font-bold mb-0">Connect</h4>
             <div className="flex gap-4 mb-4">
               {/* {['Facebook', 'Twitter', 'Instagram', 'LinkedIn'].map((social) => (
                 <a 

@@ -202,9 +202,9 @@ function AboutMe() {
         </div>
         
         <div className="relative z-20 text-center text-white px-5 max-w-4xl">
-          <h1 className="text-6xl md:text-7xl font-serif font-bold mb-6 animate-fadeIn">
-            Dickson Lane
-          </h1>
+          <h2 className="text-3xl md:text-7xl font-bold text-gray-500  mb-4 font-serif">
+        Dickson <span className="text-red-800">Lane</span>
+         </h2>
           <p className="text-xl md:text-2xl mb-10 max-w-2xl mx-auto leading-relaxed">
             Where Literature Meets Life's Profoundest Truths
           </p>
@@ -250,20 +250,19 @@ function AboutMe() {
             
             <div className="space-y-6">
               <p className="text-lg leading-relaxed text-gray-600">
-                Dickson Lane is a screenwriter, playwright, author, artist, stage, and screen actor. 
-                Like Alex, Dickson has spent many years on the road with national tours and regional theaters. 
-                He has narrated many audiobooks. Formerly he was also a film critic in New York City. 
-                His play, <em>And She Was There</em> is currently on the Regional Theater Circuit. 
+               Dickson Lane is a multi-talented creative with accomplishments spanning literature, theatre, and the arts. 
+               His stage play "And She Was There" has become a staple in regional and community theatre. 
+               As a visual artist, he trained under Robert Hale at the Art Students League of New York, developing a keen eye for detail and depth that now informs his writing. 
               </p>
               
               <p className="text-lg leading-relaxed text-gray-600">
-                In his "other life" he is a Certified Technical Trainer and Instructional Designer, 
-                bringing the same passion for storytelling to educational contexts.
+                A lifelong aficionado of performance, Lane has earned credits as an actor, technician, and producer in both theatre and film. 
+                He further honed his craft at the prestigious Webber-Douglas Academy of Dramatic Art in London and holds a BA in English and Theatre Arts from Catawba College in North Carolina.
               </p>
               
               <p className="text-lg leading-relaxed text-gray-600">
-                Alex Olexsij has been a film maven since childhood and a discerning student of film for most of his adult life.
-                After graduating from college with a degree in history and archaeology, Alex then spent 20 years crisscrossing the country as a professional actor. 
+                "Kakaki, The Ghost Walker" marks his debut as a novelist, weaving together his background in the dramatic and visual arts into a vivid, immersive story. 
+                With this work, Lane showcases his gift for blending atmosphere, character, and imagination, establishing himself as a fresh and compelling voice in contemporary fiction. 
               </p>
             </div>
             
