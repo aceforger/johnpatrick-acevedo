@@ -276,7 +276,7 @@ function AboutMe() {
               <div className="bg-white p-6 rounded-xl shadow-lg border border-gray-100 transition-all duration-500 hover:shadow-xl hover:-translate-y-2">
                 <FaUniversity className="text-3xl text-orange-500 mb-4" />
                 <h3 className="text-xl font-medium text-gray-800 mb-2">Education</h3>
-                <p className="text-gray-600">PhD in Literature from Oxford</p>
+                <p className="text-gray-600"> Webber-Douglas Academy of Dramatic Art in London, BA in English and Theatre Arts from Catawba College in North Carolina</p>
               </div>
               
               <div className="bg-white p-6 rounded-xl shadow-lg border border-gray-100 transition-all duration-500 hover:shadow-xl hover:-translate-y-2">
