@@ -31,7 +31,7 @@ export default function AudioBookShop() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-blue-50 to-blue-100">
       {/* Hero Section */}
-      <section className="relative bg-gradient-to-r from-blue-700 to-indigo-800 text-white py-5">
+      <section className="relative bg-gradient-to-r from-blue-700 to-indigo-800 text-white py-1">
         <div className="max-w-7xl mx-auto px-6 text-center">
           <h1 className="text-4xl font-extrabold mb-4 tracking-tight">Immersive Audiobooks</h1>
           <p className="text-lg opacity-90 mb-6">Stories come alive with our professional narrations. Listen anytime, anywhere.</p>
@@ -182,7 +182,7 @@ export default function AudioBookShop() {
       </section>
 
       {/* Footer */}
-      <footer className="bg-blue-800 text-white py-6 text-center">
+      <footer className="bg-blue-800 text-white py-3 text-center">
         <p className="text-sm">© {new Date().getFullYear()} Immersive Audiobooks. All rights reserved.</p>
       </footer>
     </div>

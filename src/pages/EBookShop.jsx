@@ -31,11 +31,11 @@ export default function EBookShop() {
     <div className="min-h-screen bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-50">
       {/* Hero Section */}
       <div className="relative overflow-hidden bg-gradient-to-r from-indigo-600 to-blue-600">
-        <div className="max-w-7xl mx-auto px-6 py-5 text-center relative z-10">
+        <div className="max-w-7xl mx-auto px-6 py-2 text-center relative z-10">
           <h1 className="text-4xl font-extrabold text-white mb-4">
             Discover Your Next Digital Escape
           </h1>
-          <p className="text-lg text-indigo-100 max-w-2xl mx-auto">
+          <p className="text-lg text-indigo-100 max-w-1xl mx-auto">
             Instantly access captivating ebooks across genres. Read anywhere,
             anytime, on any device.
           </p>
@@ -187,7 +187,7 @@ export default function EBookShop() {
         </div>
 
         {/* Newsletter */}
-        <div className="mt-24 bg-gradient-to-r from-indigo-600 to-blue-600 text-white rounded-2xl shadow-xl p-10 text-center">
+        <div className="mt-24 bg-gradient-to-r from-indigo-600 to-blue-600 text-white rounded-2xl shadow-xl p-4 text-center">
           <h2 className="text-2xl font-bold mb-2">Get Free EBook Samples</h2>
           <p className="text-indigo-100 mb-6">
             Subscribe to our newsletter for exclusive free chapters and updates.

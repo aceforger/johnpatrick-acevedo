@@ -10,7 +10,7 @@ import AudioBookShop from './pages/AudioBookShop';
 
 export default function App() {
   return (
-    <div className="w-screen min-h-screen m-0 p-0 overflow-x-hidden">
+    <div className="min-w-screen min-h-screen m-0 p-0">
       <Router>
         <ScrollToTop /> 
         <Routes>

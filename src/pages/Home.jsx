@@ -113,19 +113,23 @@ function Home() {
       </div>
 
       {/* Search Header */}
-      <header className="sticky top-0 z-50 bg-white shadow-md py-4 px-6 flex flex-col md:flex-row items-center justify-between">
-        <div className="logo mb-4 md:mb-0">
-          <img src="dickson.png" alt="Dickson Lane" className="h-20 w-auto" />
-        </div>
-        <div className="relative w-full md:w-1/3">
-          <input 
-            type="text" 
-            placeholder="Search for books, authors, genres..." 
-            className="w-full px-4 py-2 pr-10 rounded-full border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-          />
-          <FaSearch className="absolute right-3 top-3 text-gray-400" />
-        </div>
-      </header>
+     <header className="sticky top-0 z-50 bg-white shadow-sm py-3 px-6 flex flex-col md:flex-row items-center justify-between">
+  {/* Logo */}
+  <div className="logo mb-3 md:mb-0">
+    <img src="dickson.png" alt="Dickson Lane" className="h-16 w-auto" />
+  </div>
+
+  {/* Search */}
+  <div className="relative w-full md:w-64">
+    <input 
+      type="text" 
+      placeholder="Search books, authors..." 
+      className="w-full px-4 py-2 pr-10 rounded-full border border-gray-300 focus:outline-none focus:border-gray-500 transition"
+    />
+    <FaSearch className="absolute right-3 top-2.5 text-gray-400" />
+  </div>
+</header>
+
 
       <Navbar />
 
@@ -217,7 +221,7 @@ function Home() {
 
 
       {/* eBook Section */}
-   <section className="relative py-20 px-4 md:px-8 bg-gradient-to-br from-blue-50 via-white to-blue-200 text-gray-900 overflow-hidden">
+   <section className="relative py-10 px-4 md:px-8 bg-gradient-to-br from-blue-50 via-white to-blue-200 text-gray-900 overflow-hidden">
   {/* Decorative blur accents */}
   <div className="absolute inset-0">
     <div className="absolute top-24 left-1/3 w-80 h-80 bg-blue-200/40 blur-3xl rounded-full"></div>
@@ -242,8 +246,8 @@ function Home() {
           <div className="absolute inset-0 bg-gradient-to-br from-sky-50 to-blue-100 rounded-2xl flex flex-col justify-between p-6 border border-blue-200 shadow-lg">
             <div>
               <p className="text-xs uppercase tracking-wide text-sky-600 mb-3">Featured</p>
-              <h3 className="text-2xl font-bold mb-2 text-blue-900">Serene Stories</h3>
-              <p className="text-gray-500 text-sm">by Aesthetic Author</p>
+              <h3 className="text-2xl font-bold mb-2 text-blue-900">A Ghost Walker</h3>
+              <p className="text-gray-500 text-sm">by Dickson Lane</p>
             </div>
             <div className="space-y-3">
               <button className="w-full bg-sky-500 text-white font-semibold py-2 rounded-lg hover:bg-sky-600 transition shadow-md">
@@ -299,7 +303,7 @@ function Home() {
 
 
       {/* Audiobooks Section */}
-    <section className="relative py-20 px-4 md:px-6 overflow-hidden bg-gradient-to-br from-sky-50 via-blue-50 to-sky-100">
+    <section className="relative py-10 px-4 md:px-6 overflow-hidden bg-gradient-to-br from-sky-50 via-blue-50 to-sky-100">
   {/* Background glow */}
   <div className="absolute inset-0">
     <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[600px] bg-sky-300/40 rounded-full blur-[120px]"></div>
@@ -359,7 +363,7 @@ function Home() {
 
 
       {/* About Us Carousel */}
-    <section className="relative py-24 px-6 md:px-12 bg-[url('/bookstore-bg.jpg')] bg-cover bg-center">
+    <section className="relative py-8 px-6 md:px-12 bg-[url('/bookstore-bg.jpg')] bg-cover bg-center">
   {/* Overlay */}
   <div className="absolute inset-0 bg-black/40"></div>
 
@@ -471,60 +475,58 @@ function Home() {
 </section>
 
       {/* Footer */}
-      <footer className="bg-gray-900 text-white py-12 px-4 md:px-8">
-        <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-8">
-          <div>
-            <img src="dickson1.jpg" alt="Dickson Lane" className="h-12 mb-4 rounded-2xl" />
-            <p className="text-gray-400">
-              Your gateway to exceptional books and reading experiences since 2010.
-            </p>
-          </div>
-          
-          <div>
-            <h4 className="text-lg font-bold mb-4">Explore</h4>
-            <ul className="space-y-2">
-              <li><a href="/bookshop" className="text-gray-400 hover:text-white transition-colors">Books</a></li>
-              <li><a href="/ebooks" className="text-gray-400 hover:text-white transition-colors">eBooks</a></li>
-              <li><a href="/audiobooks" className="text-gray-400 hover:text-white transition-colors">Audiobooks</a></li>
-              
-            </ul>
-          </div>
-          
-          <div>
-            <h4 className="text-lg font-bold mb-4">Company</h4>
-            <ul className="space-y-2">
-              <li><a href="#" className="text-gray-400 hover:text-white transition-colors">About Us</a></li>
-              <li><a href="#" className="text-gray-400 hover:text-white transition-colors">Contact</a></li>
-            </ul>
-          </div>
-          
-          <div>
-            <h4 className="text-lg font-bold mb-0">Connect</h4>
-            <div className="flex gap-4 mb-4">
-              {/* {['Facebook', 'Twitter', 'Instagram', 'LinkedIn'].map((social) => (
-                <a 
-                  key={social} 
-                  href="#" 
-                  className="bg-gray-800 hover:bg-gray-700 w-10 h-10 rounded-full flex items-center justify-center transition-colors"
-                  aria-label={social}
-                >
-                  <span className="sr-only">{social}</span>
-                </a>
-              ))} */}
-            </div>
-            <p className="text-gray-400 text-sm">
-              123 Book Street, Literary City, LC 12345
-            </p>
-            <p className="text-gray-400 text-sm">
-              info@dicksonlane.com
-            </p>
-          </div>
-        </div>
-        
-        <div className="border-t border-gray-800 mt-12 pt-8 text-center text-gray-500 text-sm">
-          <p>© {new Date().getFullYear()} Dickson Lane. All rights reserved.</p>
-        </div>
-      </footer>
+     <footer className="bg-gradient-to-r from-[#1e3a8a] to-[#1e40af] text-gray-100 py-5 px-4 md:px-8">
+  <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-8">
+    
+    {/* Brand */}
+    <div>
+      <img src="dickson1.jpg" alt="Dickson Lane" className="h-12 mb-4 rounded-2xl" />
+      <p className="text-gray-300">
+        Your gateway to exceptional books and reading experiences since 2010.
+      </p>
+    </div>
+    
+    {/* Explore */}
+    <div>
+      <h4 className="text-lg border-b font-semibold mb-4 text-white">Explore</h4>
+      <ul className="space-y-2">
+        <li><a href="/bookshop" className="text-gray-300 hover:text-white transition-colors">Books</a></li>
+        <li><a href="/ebooks" className="text-gray-300 hover:text-white transition-colors">eBooks</a></li>
+        <li><a href="/audiobooks" className="text-gray-300 hover:text-white transition-colors">Audiobooks</a></li>
+      </ul>
+    </div>
+    
+    {/* Company */}
+    <div>
+      <h4 className="border-b text-lg font-semibold mb-4 text-white">Company</h4>
+      <ul className="space-y-2">
+        <li><a href="#" className="text-gray-300 hover:text-white transition-colors">About Us</a></li>
+        <li><a href="#" className="text-gray-300 hover:text-white transition-colors">Contact</a></li>
+      </ul>
+    </div>
+    
+    {/* Connect */}
+    <div>
+      <h4 className="border-b text-lg font-semibold mb-0 text-white">Connect</h4>
+      <div className="flex gap-4 mb-4">
+        {/* Example social icon button */}
+        {/* <a href="#" className="bg-blue-800 hover:bg-blue-700 w-10 h-10 rounded-full flex items-center justify-center transition-colors">
+          <span className="sr-only">Facebook</span>
+        </a> */}
+      </div>
+      <p className="text-gray-300 text-sm">123 Book Street, Literary City, LC 12345</p>
+      <p className="text-gray-300 text-sm">info@dicksonlane.com</p>
+    </div>
+  </div>
+  
+  {/* Bottom bar */}
+  <div className="border-t border-blue-700 mt-10 pt-5 text-center text-gray-400 text-sm">
+    <p>© {new Date().getFullYear()} Dickson Lane. All rights reserved.</p>
+  </div>
+</footer>
+
+
+
     </div>
   );
 }
