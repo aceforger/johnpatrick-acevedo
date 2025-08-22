@@ -134,7 +134,7 @@ function Home() {
       <Navbar />
 
       {/* Featured Books Section */}
-<section className="py-20 px-4 md:px-8 relative bg-gradient-to-br from-[#f9f7f2] via-[#f1eee7] to-[#e6e2da]">
+<section className="py-15 px-4 md:px-8 relative bg-gradient-to-br from-[#f9f7f2] via-[#f1eee7] to-[#e6e2da]">
   {/* Decorative background layers */}
   <div className="absolute inset-0 z-0">
     {/* Soft paper-like texture */}
@@ -437,7 +437,7 @@ function Home() {
 
 
       {/* Newsletter Section */}
-     <section className="relative py-20 px-6 md:px-12 bg-gradient-to-br from-[#f8f5f2] via-[#f3ede7] to-[#e9e2db]">
+     <section className="relative py-8 px-6 md:px-12 bg-gradient-to-br from-[#f8f5f2] via-[#f3ede7] to-[#e9e2db]">
   <div className="max-w-3xl mx-auto text-center">
     {/* Title */}
     <h2 className="text-4xl md:text-5xl font-bold mb-6 font-serif text-[#3e2c2c]">
