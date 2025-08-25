@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom';
 
 function Navbar() {
   return (
-    <nav className="bg-white shadow-sm py-4 overflow-x-auto whitespace-nowrap">
+    <nav className="bg-white">
       <ul className="flex list-none m-0 px-4 gap-2 md:justify-center md:gap-0 md:px-0">
         <NavItem 
           iconSrc="./book.gif" 
