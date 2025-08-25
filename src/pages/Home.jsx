@@ -167,7 +167,7 @@ function Home() {
         {/* Overlay */}
         <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent z-10"></div>
         <div className="absolute bottom-0 left-0 p-6 z-20">
-          <h3 className="text-2xl font-bold text-white mb-2">THE GHOST WALKER</h3>
+          <h3 className="text-2xl md:text-2xl font-bold text-white mb-4 font-serif leading-tight">THE GHOST WALKER</h3>
         </div>
         
         {/* Default Image */}
@@ -195,7 +195,7 @@ function Home() {
         {/* Overlay */}
         <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent z-10"></div>
         <div className="absolute bottom-0 left-0 p-6 z-20">
-          <h3 className="text-2xl font-bold text-white mb-2">10 LITTLE INDIANS</h3>
+          <h3 className="text-2xl md:text-2xl font-bold text-white mb-4 font-serif leading-tight">10 LITTLE INDIANS</h3>
         </div>
         
         {/* Default Image */}
