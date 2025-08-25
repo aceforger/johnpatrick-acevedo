@@ -229,87 +229,82 @@ function AboutMe() {
 
       
       {/* About Section */}
-    <div className="max-w-7xl mx-auto px-5 py-20">
-  {/* Section Heading */}
-  <div className="text-center mb-20">
-    <h1 className="text-4xl md:text-5xl font-serif text-gray-800 mb-6 relative inline-block">
-      <span className="relative">
-        About The Author
-        <span className="absolute bottom-[-10px] left-0 w-full h-1 bg-gradient-to-r from-blue-500 to-indigo-400"></span>
-      </span>
-    </h1>
-    <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-      Author, Educator, and Literary Visionary bridging timeless wisdom with contemporary storytelling
-    </p>
-  </div>
-
-  {/* Author Picture + Text */}
-  <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start mb-28">
-    {/* Picture + Widgets */}
-    <div className="relative">
-      <div className="relative rounded-xl overflow-hidden shadow-2xl">
-        <img 
-          src="profile.jpg" 
-          alt="Dickson Lane" 
-          className="w-full h-auto object-cover transition-transform duration-700 hover:scale-105"
-        />
-      </div>
-      <div className="absolute -z-10 -bottom-8 -right-8 w-3/4 h-3/4 border-4 border-orange-400 rounded-xl"></div>
-
-      {/* Widgets directly below picture */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mt-8">
-        <div className="bg-white p-6 rounded-xl shadow-lg border border-gray-100 transition-all duration-500 hover:shadow-xl hover:-translate-y-2 text-center">
-          <FaBookOpen className="text-3xl text-orange-500 mb-4 mx-auto" />
-          <h3 className="text-xl font-medium text-gray-800 mb-2">Published Works</h3>
-          <p className="text-gray-600">8 books, 20+ academic papers</p>
-        </div>
-
-        <div className="bg-white p-6 rounded-xl shadow-lg border border-gray-100 transition-all duration-500 hover:shadow-xl hover:-translate-y-2 text-center">
-          <FaUniversity className="text-3xl text-orange-500 mb-4 mx-auto" />
-          <h3 className="text-xl font-medium text-gray-800 mb-2">Education</h3>
-          <p className="text-gray-600">
-            Webber-Douglas Academy of Dramatic Art in London, BA in English and Theatre Arts
+      <div className="max-w-7xl mx-auto px-5 py-20">
+        <div className="text-center mb-20">
+          <h1 className="text-4xl md:text-5xl font-serif text-gray-800 mb-6 relative inline-block">
+            <span className="relative">
+              About The Author
+              <span className="absolute bottom-[-10px] left-0 w-full h-1 bg-gradient-to-r from-blue-500 to-indigo-400"></span>
+            </span>
+          </h1>
+          <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+            Author, Educator, and Literary Visionary bridging timeless wisdom with contemporary storytelling
           </p>
         </div>
-
-        <div className="bg-white p-6 rounded-xl shadow-lg border border-gray-100 transition-all duration-500 hover:shadow-xl hover:-translate-y-2 text-center">
-          <FaPenFancy className="text-3xl text-orange-500 mb-4 mx-auto" />
-          <h3 className="text-xl font-medium text-gray-800 mb-2">Writing Style</h3>
-          <p className="text-gray-600">Literary fiction with historical depth</p>
-        </div>
-
-        <div className="bg-white p-6 rounded-xl shadow-lg border border-gray-100 transition-all duration-500 hover:shadow-xl hover:-translate-y-2 text-center">
-          <FaAward className="text-3xl text-orange-500 mb-4 mx-auto" />
-          <h3 className="text-xl font-medium text-gray-800 mb-2">Awards</h3>
-          <p className="text-gray-600">3-time Booker Prize nominee</p>
+        
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start mb-28">
+          <div className="relative">
+            <div className="relative rounded-xl overflow-hidden shadow-2xl">
+              <img 
+                src="profile.jpg" 
+                alt="Dickson Lane" 
+                className="w-full h-auto object-cover transition-transform duration-700 hover:scale-105"
+              />
+            </div>
+            <div className="absolute -z-10 -bottom-8 -right-8 w-3/4 h-3/4 border-4 border-orange-400 rounded-xl"></div>
+          </div>
+          
+          <div className="pt-10">
+            <h2 className="text-3xl font-serif text-gray-800 mb-8">
+              The Story Behind the Words
+            </h2>
+            
+            <div className="space-y-6">
+              <p className="text-lg leading-relaxed text-gray-600">
+               Dickson Lane is a multi-talented creative with accomplishments spanning literature, theatre, and the arts. 
+               His stage play "And She Was There" has become a staple in regional and community theatre. 
+               As a visual artist, he trained under Robert Hale at the Art Students League of New York, developing a keen eye for detail and depth that now informs his writing. 
+              </p>
+              
+              <p className="text-lg leading-relaxed text-gray-600">
+                A lifelong aficionado of performance, Lane has earned credits as an actor, technician, and producer in both theatre and film. 
+                He further honed his craft at the prestigious Webber-Douglas Academy of Dramatic Art in London and holds a BA in English and Theatre Arts from Catawba College in North Carolina.
+              </p>
+              
+              <p className="text-lg leading-relaxed text-gray-600">
+                "Kakaki, The Ghost Walker" marks his debut as a novelist, weaving together his background in the dramatic and visual arts into a vivid, immersive story. 
+                With this work, Lane showcases his gift for blending atmosphere, character, and imagination, establishing himself as a fresh and compelling voice in contemporary fiction. 
+              </p>
+            </div>
+            
+            <div className="grid grid-cols-2 gap-6 mt-12">
+              <div className="bg-white p-6 rounded-xl shadow-lg border border-gray-100 transition-all duration-500 hover:shadow-xl hover:-translate-y-2">
+                <FaBookOpen className="text-3xl text-orange-500 mb-4" />
+                <h3 className="text-xl font-medium text-gray-800 mb-2">Published Works</h3>
+                <p className="text-gray-600">8 books, 20+ academic papers</p>
+              </div>
+              
+              <div className="bg-white p-6 rounded-xl shadow-lg border border-gray-100 transition-all duration-500 hover:shadow-xl hover:-translate-y-2">
+                <FaUniversity className="text-3xl text-orange-500 mb-4" />
+                <h3 className="text-xl font-medium text-gray-800 mb-2">Education</h3>
+                <p className="text-gray-600"> Webber-Douglas Academy of Dramatic Art in London, BA in English and Theatre Arts from Catawba College in North Carolina</p>
+              </div>
+              
+              <div className="bg-white p-6 rounded-xl shadow-lg border border-gray-100 transition-all duration-500 hover:shadow-xl hover:-translate-y-2">
+                <FaPenFancy className="text-3xl text-orange-500 mb-4" />
+                <h3 className="text-xl font-medium text-gray-800 mb-2">Writing Style</h3>
+                <p className="text-gray-600">Literary fiction with historical depth</p>
+              </div>
+              
+              <div className="bg-white p-6 rounded-xl shadow-lg border border-gray-100 transition-all duration-500 hover:shadow-xl hover:-translate-y-2">
+                <FaAward className="text-3xl text-orange-500 mb-4" />
+                <h3 className="text-xl font-medium text-gray-800 mb-2">Awards</h3>
+                <p className="text-gray-600">3-time Booker Prize nominee</p>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
-    </div>
-
-    {/* Author Bio Text */}
-    <div className="pt-10">
-      <h2 className="text-3xl font-serif text-gray-800 mb-8">
-        The Story Behind the Words
-      </h2>
-      <div className="space-y-6">
-        <p className="text-lg leading-relaxed text-gray-600">
-          Dickson Lane is a multi-talented creative with accomplishments spanning literature, theatre, and the arts. 
-          His stage play "And She Was There" has become a staple in regional and community theatre. 
-          As a visual artist, he trained under Robert Hale at the Art Students League of New York, developing a keen eye for detail and depth that now informs his writing. 
-        </p>
-        <p className="text-lg leading-relaxed text-gray-600">
-          A lifelong aficionado of performance, Lane has earned credits as an actor, technician, and producer in both theatre and film. 
-          He further honed his craft at the prestigious Webber-Douglas Academy of Dramatic Art in London and holds a BA in English and Theatre Arts from Catawba College in North Carolina.
-        </p>
-        <p className="text-lg leading-relaxed text-gray-600">
-          "Kakaki, The Ghost Walker" marks his debut as a novelist, weaving together his background in the dramatic and visual arts into a vivid, immersive story. 
-          With this work, Lane showcases his gift for blending atmosphere, character, and imagination, establishing himself as a fresh and compelling voice in contemporary fiction. 
-        </p>
-      </div>
-    </div>
-  </div>
-</div>
-
 
       {/* Gallery Section */}
       <ImageGallery />

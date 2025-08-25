@@ -42,6 +42,8 @@ const NavItem = ({ iconSrc, text, active = false, path }) => (
       className={`flex flex-col items-center gap-2 p-2 rounded text-xs font-medium font-mono
         ${active ? 'text-black font-semibold' : 'text-gray-700'}
         hover:text-gray-700 transition-colors duration-300
+
+        
       `}
     >
       <div className="mb-1">
