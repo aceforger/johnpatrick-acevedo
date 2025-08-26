@@ -206,7 +206,7 @@ function AboutMe() {
 
         {/* Dickson Lane top-left */}
         <h2 className="absolute top-6 left-6 z-20 text-3xl md:text-7xl font-bold text-gray-100 font-serif">
-          Dickson <span className="text-red-800">Lane</span>
+          Dickson <span className="text-red-500">Lane</span>
         </h2>
 
         {/* Centered content */}
@@ -277,7 +277,11 @@ function AboutMe() {
               </p>
             </div>
             
-            <div className="grid grid-cols-2 gap-6 mt-12">
+            
+          </div>
+            
+        </div>
+        <div className="grid grid-cols-1 sm:grid-cols-2 max-w-screen lg:grid-cols-4 gap-6 mt-8">
               <div className="bg-white p-6 rounded-xl shadow-lg border border-gray-100 transition-all duration-500 hover:shadow-xl hover:-translate-y-2">
                 <FaBookOpen className="text-3xl text-orange-500 mb-4" />
                 <h3 className="text-xl font-medium text-gray-800 mb-2">Published Works</h3>
@@ -302,8 +306,6 @@ function AboutMe() {
                 <p className="text-gray-600">3-time Booker Prize nominee</p>
               </div>
             </div>
-          </div>
-        </div>
       </div>
 
       {/* Gallery Section */}

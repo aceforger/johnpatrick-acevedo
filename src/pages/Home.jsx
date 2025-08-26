@@ -41,6 +41,10 @@ function Home() {
   const [currentSlide, setCurrentSlide] = useState(0);
   const location = useLocation();
 
+  const [showPopup, setShowPopup] = useState(false);
+  const [showPopup2, setShowPopup2] = useState(false);
+
+
   // Hero section animation
   const [heroLoaded, setHeroLoaded] = useState(false);
 
@@ -116,9 +120,9 @@ function Home() {
      <header className="sticky top-0 z-50 bg-white shadow-sm py-3 px-6 flex flex-col md:flex-row items-center justify-between">
   {/* Logo */}
   <div className="logo mb-3 md:mb-0">
-    <img src="dickson.png" alt="Dickson Lane" className="h-16 w-auto" />
+    <img onClick={() => navigate('/')} src="dickson.png" alt="Dickson Lane" className="h-16 w-auto cursor-pointer hover:animate-none" />
   </div>
-
+  <Navbar />
   {/* Search */}
   <div className="relative w-full md:w-64">
     <input 
@@ -131,7 +135,7 @@ function Home() {
 </header>
 
 
-      <Navbar />
+      
 
       {/* Featured Books Section */}
 <section className="py-15 px-4 md:px-8 relative bg-gradient-to-br from-[#f9f7f2] via-[#f1eee7] to-[#e6e2da]">
@@ -195,7 +199,7 @@ function Home() {
         {/* Overlay */}
         <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent z-10"></div>
         <div className="absolute bottom-0 left-0 p-6 z-20">
-          <h3 className="text-2xl md:text-2xl font-bold text- mb-4 font-serif leading-tight">10 LITTLE INDIANS</h3>
+          <h3 className="text-2xl md:text-2xl font-bold text-white mb-4 font-serif leading-tight">10 LITTLE INDIANS</h3>
         </div>
         
         {/* Default Image */}
@@ -250,13 +254,44 @@ function Home() {
               <p className="text-gray-500 text-sm">by Dickson Lane</p>
             </div>
             <div className="space-y-3">
-              <button className="w-full bg-sky-500 text-white font-semibold py-2 rounded-lg hover:bg-sky-600 transition shadow-md">
-                Read Now
-              </button>
-              <button className="w-full border border-sky-500 text-sky-700 py-2 rounded-lg font-semibold hover:bg-sky-50 transition shadow-md">
-                Preview
-              </button>
-            </div>
+                  {/* Buttons */}
+                  <button
+                    onClick={() => setShowPopup(true)}
+                    className="w-full bg-sky-500 text-white font-semibold py-2 rounded-lg hover:bg-sky-600 transition shadow-md"
+                  >
+                    Read Now
+                  </button>
+
+                  <button
+                    onClick={() => setShowPopup(true)}
+                    className="w-full border border-sky-500 text-sky-700 py-2 rounded-lg font-semibold hover:bg-sky-50 transition shadow-md"
+                  >
+                    Preview
+                  </button>
+
+                  {/* Custom Popup */}
+                  {showPopup && (
+                    <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50">
+                      <div className="bg-white px-4 py-3 rounded-lg shadow-lg w-[210px] text-center">
+                        <h2 className="text-base font-semibold text-gray-800 mb-2">
+                          Coming Soon 🚀
+                        </h2>
+                        <p className="text-gray-600 mb-3 text-sm leading-snug">
+                          This feature is not available yet. Stay tuned!
+                        </p>
+                        <button
+                          onClick={() => setShowPopup(false)}
+                          className="bg-sky-500 text-white px-3 py-1.5 rounded-md font-semibold hover:bg-sky-600 transition text-sm"
+                        >
+                          Close
+                        </button>
+                      </div>
+                    </div>
+                  )}
+
+
+                </div>
+
           </div>
         </div>
       </div>
@@ -291,7 +326,7 @@ function Home() {
             </li>
           ))}
         </ul>
-        <button className="mt-8 bg-sky-500 hover:bg-sky-600 text-white px-8 py-3 rounded-lg font-medium shadow-md transition">
+        <button onClick={() => navigate('/ebooks')} className="mt-8 bg-sky-500 hover:bg-sky-600 text-white px-8 py-3 rounded-lg font-medium shadow-md transition">
           Explore Collection
         </button>
       </div>
@@ -327,7 +362,25 @@ function Home() {
           <FaChevronLeft />
         </button>
         <div className="w-20 h-20 bg-gradient-to-tr from-sky-500 to-blue-500 rounded-full flex items-center justify-center shadow-[0_0_25px_rgba(59,130,246,0.7)]">
-          <FaPlay className="text-white text-2xl ml-1" />
+          <FaPlay onClick={() => setShowPopup2(true)} className="text-white text-2xl ml-1" />
+            {showPopup2 && (
+                    <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50">
+                      <div className="bg-white px-4 py-3 rounded-lg shadow-lg w-[210px] text-center">
+                        <h2 className="text-base font-semibold text-gray-800 mb-2">
+                          Coming Soon 🚀
+                        </h2>
+                        <p className="text-gray-600 mb-3 text-sm leading-snug">
+                          This feature is not available yet. Stay tuned!
+                        </p>
+                        <button
+                          onClick={() => setShowPopup2(false)}
+                          className="bg-sky-500 text-white px-3 py-1.5 rounded-md font-semibold hover:bg-sky-600 transition text-sm"
+                        >
+                          Close
+                        </button>
+                      </div>
+                    </div>
+                  )}
         </div>
         <button className="bg-sky-200 hover:bg-sky-300 text-blue-700 rounded-full p-3 hover:scale-110 transition-transform">
           <FaChevronRight />
@@ -354,7 +407,7 @@ function Home() {
     </div>
 
     {/* CTA Button */}
-    <button className="mt-10 bg-gradient-to-r from-sky-500 to-blue-600 hover:from-sky-600 hover:to-blue-700 text-white px-8 py-3 rounded-full font-medium transition-all transform hover:scale-105 shadow-lg shadow-blue-300/50">
+    <button onClick={() => navigate('/audiobooks')} className="mt-10 bg-gradient-to-r from-sky-500 to-blue-600 hover:from-sky-600 hover:to-blue-700 text-white px-8 py-3 rounded-full font-medium transition-all transform hover:scale-105 shadow-lg shadow-blue-300/50">
       Browse Audiobook Library
     </button>
   </div>
@@ -480,7 +533,7 @@ function Home() {
     
     {/* Brand */}
     <div>
-      <img src="dickson1.jpg" alt="Dickson Lane" className="h-12 mb-4 rounded-2xl" />
+      <img onClick={() => navigate('/')} src="dickson1.jpg" alt="Dickson Lane" className="h-12 mb-4 rounded-2xl" />
       <p className="text-gray-300">
         Your gateway to exceptional books and reading experiences since 2010.
       </p>
