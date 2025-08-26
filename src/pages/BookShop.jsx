@@ -113,16 +113,16 @@ export default function BookShop() {
         {/* Call to Action */}
         <div className="mt-20 text-center">
           <h2 className="text-2xl font-bold text-gray-900 mb-4">More Books Coming Soon!</h2>
-          <p className="text-gray-600 mb-6">Sign up to be notified when we release new titles</p>
+          {/* <p className="text-gray-600 mb-6">Sign up to be notified when we release new titles</p> */}
           <div className="max-w-md mx-auto flex">
-            <input
+            {/* <input
               type="email"
               placeholder="Your email address"
               className="flex-grow px-4 py-2 rounded-l-lg border border-gray-300 focus:ring-2 focus:ring-indigo-500 focus:border-transparent"
             />
             <button className="px-6 py-2 bg-indigo-600 text-white font-medium rounded-r-lg hover:bg-indigo-700 transition">
               Notify Me
-            </button>
+            </button> */}
           </div>
         </div>
 
