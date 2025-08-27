@@ -35,20 +35,21 @@ const slides = [
 // Simple reusable popup
 function Popup({ onClose }) {
   return (
-    <div className="fixed inset-0 flex items-center justify-center bg-black/50 z-50">
-      <div className="bg-white px-6 py-4 rounded-lg shadow-lg w-[240px] text-center">
-        <h2 className="text-lg font-semibold text-gray-800 mb-2">Coming Soon 🚀</h2>
-        <p className="text-gray-600 mb-3 text-sm leading-snug">
-          This feature is not available yet. Stay tuned!
-        </p>
-        <button
-          onClick={onClose}
-          className="bg-sky-500 text-white px-4 py-2 rounded-md font-semibold hover:bg-sky-600 transition text-sm"
-        >
-          Close
-        </button>
-      </div>
-    </div>
+    <div className="fixed inset-0 flex items-center justify-center bg-black/50 backdrop-blur-sm z-50">
+  <div className="bg-white px-6 py-4 rounded-lg shadow-lg w-[240px] text-center">
+    <h2 className="text-lg font-semibold text-gray-800 mb-2">Coming Soon 🚀</h2>
+    <p className="text-gray-600 mb-3 text-sm leading-snug">
+      This feature is not available yet. Stay tuned!
+    </p>
+    <button
+      onClick={onClose}
+      className="bg-sky-500 text-white px-4 py-2 rounded-md font-semibold hover:bg-sky-600 transition text-sm"
+    >
+      Close
+    </button>
+  </div>
+</div>
+
   );
 }
 
