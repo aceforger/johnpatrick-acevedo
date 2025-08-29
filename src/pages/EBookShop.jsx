@@ -22,7 +22,7 @@ const ebooks = [
     rating: 4.2,
     formats: ["PDF", "EPUB"],
     description: "Learn from the Masters of Moviemaking about writing screenplays.",
-    comingSoon: false,
+    comingSoon: true,
   },
 ];
 

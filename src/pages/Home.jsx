@@ -280,7 +280,7 @@ function Home() {
           <div key={index} className="flex-none w-full">
             <div
               className={`flex flex-col md:flex-row items-center h-[500px] p-10
-              ${index % 3 === 0 ? "bg-gradient-to-r from-blue-200 to-yellow-200" : ""}
+              ${index % 3 === 0 ? "bg-gradient-to-r from-blue-300 to-orange-200" : ""}
               ${index % 3 === 1 ? "bg-gradient-to-r from-blue-300 to-green-300" : ""}
               ${index % 3 === 2 ? "bg-gradient-to-r from-sky-300 to-violet-300" : ""}`}
             >

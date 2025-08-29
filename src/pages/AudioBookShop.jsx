@@ -23,7 +23,7 @@ const audiobooks = [
     rating: 4.6,
     duration: '6h 15m',
     description: 'Learn from the Masters of Moviemaking about writing screenplays.',
-    comingSoon: false  // Added comingSoon flag
+    comingSoon: true  // Added comingSoon flag
   }
 ];
 
