@@ -3,7 +3,7 @@ import React from 'react';
 const audiobooks = [
   {
     id: 1,
-    title: 'THE GHOST WALKER',
+    title: 'KAKAKI, THE MEDICINE WOMAN',
     author: 'DICKSON LANE',
     narrator: 'James Earl Jones',
     price: 19.99,
@@ -164,7 +164,7 @@ export default function AudioBookShop() {
               {
                 quote: "The narration brought the story to life in ways I couldn't imagine. James Earl Jones' voice is magical!",
                 author: 'Sarah J.',
-                book: 'THE GHOST WALKER'
+                book: 'KAKAKI, THE MEDICINE WOMAN'
               },
               {
                 quote: "I listen during my commute and it's transformed my daily drive into something I look forward to.",

@@ -5,10 +5,10 @@ import { FaArrowLeft, FaBookOpen, FaQuoteLeft } from 'react-icons/fa';
 const mockBooks = [
   { 
     id: '1', 
-    title: 'THE GHOST WALKER', 
+    title: 'KAKAKI, THE MEDICINE WOMAN', 
     author: 'DICKSON LANE', 
     image: '/image1.png', 
-    description: 'Ghost Walker is a haunting exploration of gender empowerment across native cultures and archetypes in 19th century Canada. The novel follows protagonist Eliza Blackwood as she navigates the spiritual and physical landscapes of indigenous communities. Through vivid prose and meticulous research, Lane brings to life forgotten histories and traditions.', 
+    description: 'Kakaki, the medicine woman is a haunting exploration of gender empowerment across native cultures and archetypes in 19th century Canada. The novel follows protagonist Eliza Blackwood as she navigates the spiritual and physical landscapes of indigenous communities. Through vivid prose and meticulous research, Lane brings to life forgotten histories and traditions.', 
     postDate: 'May 21, 2025',
     quote: '"A mesmerizing journey through forgotten histories. Lane masterfully blends the supernatural with profound cultural insights." - Cultural Reviews',
     relatedTopics: [

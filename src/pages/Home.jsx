@@ -134,12 +134,12 @@ function Home() {
           >
             <div className="absolute inset-0 bg-gradient-to-t from-blue/70 to-transparent z-10"></div>
             <div className="absolute bottom-0 left-0 p-6 z-20">
-              <h3 className="text-4xl md:text-3xl font-bold text-sky-700 mb-4 font-serif leading-tight">THE GHOST WALKER</h3>
+              <h3 className="text-3xl md:text-2xl font-bold text-sky-700 mb-4 font-serif leading-tight">KAKAKI, THE MEDICINE WOMAN</h3>
             </div>
             <img
               src="image1.png"
-              alt="The Ghost Walker"
-              className="absolute inset-0 w-full h-full object-contain group-hover:opacity-0 transition"
+              alt="Kakaki, The Medicine Woman"
+              className="absolute inset-0 w-full h-[90%] object-contain group-hover:opacity-0 transition mt-5"
             />
             <img
               src="dickson-book1.gif"
@@ -155,7 +155,7 @@ function Home() {
           >
             <div className="absolute inset-0 bg-gradient-to-t from-blue/70 to-transparent z-10"></div>
             <div className="absolute bottom-0 left-0 p-6 z-20">
-              <h3 className="ttext-4xl md:text-3xl font-bold text-sky-700 mb-4 font-serif leading-tight">10 LITTLE INDIANS</h3>
+              <h3 className="text-3xl md:text-2xl font-bold text-sky-700 mb-4 font-serif leading-tight">10 LITTLE INDIANS</h3>
             </div>
             <img
               src="image4.png"
@@ -179,7 +179,7 @@ function Home() {
         <p className="text-gray-600 mb-10">“Your Library, Anytime, Anywhere”</p>
 
         <div className="flex justify-center gap-12">
-          {["A Ghost Walker", "10 Little Indians"].map((title, i) => (
+          {["Kakaki, The Medicine Woman", "10 Little Indians"].map((title, i) => (
             <div key={i} className="relative w-64 h-96 group">
               <div className="absolute inset-0 bg-gradient-to-br from-sky-50 to-blue-100 rounded-2xl shadow-xl p-6 flex flex-col justify-between border border-blue-200">
                 <div>
@@ -237,7 +237,7 @@ function Home() {
             </button>
           </div>
           <h4 className="font-semibold text-blue-900">Now Playing</h4>
-          <p className="text-sky-700 text-sm mb-3">The Ghost Walker — Chapter 5</p>
+          <p className="text-sky-700 text-sm mb-3">Kakaki, The Medicine Woman — Chapter 5</p>
           <div className="w-full bg-blue-200 h-1.5 rounded-full mb-2">
             <div className="bg-gradient-to-r from-sky-500 to-blue-600 h-1.5 rounded-full w-[45%]"></div>
           </div>

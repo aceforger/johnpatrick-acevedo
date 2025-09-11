@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 const books = [
   {
     id: 1,
-    title: 'THE GHOST WALKER',
+    title: 'KAKAKI, THE MEDICINE WOMAN',
     author: 'DICKSON LANE',
     image: '/image1.png',
     rating: 4.5,

@@ -3,7 +3,7 @@ import React from "react";
 const ebooks = [
   {
     id: 1,
-    title: "THE GHOST WALKER",
+    title: "KAKAKI, THE MEDICINE WOMAN",
     author: "DICKSON LANE",
     price: 14.99,
     image: "/image1.png",

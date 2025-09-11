@@ -272,7 +272,7 @@ function AboutMe() {
               </p>
               
               <p className="text-lg leading-relaxed text-gray-600">
-                "Kakaki, The Ghost Walker" marks his debut as a novelist, weaving together his background in the dramatic and visual arts into a vivid, immersive story. 
+                "Kakaki, The Medicine Woman" marks his debut as a novelist, weaving together his background in the dramatic and visual arts into a vivid, immersive story. 
                 With this work, Lane showcases his gift for blending atmosphere, character, and imagination, establishing himself as a fresh and compelling voice in contemporary fiction. 
               </p>
             </div>
@@ -285,7 +285,7 @@ function AboutMe() {
               <div className="bg-white p-6 rounded-xl shadow-lg border border-gray-100 transition-all duration-500 hover:shadow-xl hover:-translate-y-2">
                 <FaBookOpen className="text-3xl text-orange-500 mb-4" />
                 <h3 className="text-xl font-medium text-gray-800 mb-2">Published Works</h3>
-                <p className="text-gray-600">8 books, 20+ academic papers</p>
+                <p className="text-gray-600">2 books, 4 screen plays</p>
               </div>
               
               <div className="bg-white p-6 rounded-xl shadow-lg border border-gray-100 transition-all duration-500 hover:shadow-xl hover:-translate-y-2">
