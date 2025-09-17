@@ -7,6 +7,7 @@ import ScrollToTop from './components/ScrollToTop';
 import BookShop from './pages/BookShop';
 import EBookShop from './pages/EBookShop';
 import AudioBookShop from './pages/AudioBookShop';
+import ContactUs from './pages/ContactUs';
 
 export default function App() {
   return (
@@ -22,6 +23,7 @@ export default function App() {
           <Route path="/bookshop" element={<BookShop />} />
           <Route path="/ebooks" element={<EBookShop />} />
           <Route path="/audiobooks" element={<AudioBookShop />} />
+          <Route path="/contactus" element={<ContactUs />} />
         </Routes>
       </Router>
     </div>
