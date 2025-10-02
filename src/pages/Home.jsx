@@ -6,27 +6,27 @@ import Navbar from "../components/Navbar";
 // Carousel slides
 const slides = [
   {
-    image: "laptop.png",
+    image: "/images/laptop.png",
     title: "Our Story",
     text: "Founded in 2010, Dickson Lane began as a small bookstore with big dreams.",
   },
   {
-    image: "ebookk.png",
+    image: "/images/ebookk.png",
     title: "Our Mission",
     text: "To connect readers with books that inspire, educate, and entertain.",
   },
   {
-    image: "bookdic.png",
+    image: "/images/bookdic.png",
     title: "Our Team",
     text: "A passionate group of book lovers dedicated to literary excellence.",
   },
   {
-    image: "indiansdic.png",
+    image: "/images/indiansdic.png",
     title: "Our Selection",
     text: "Curated collections for every taste, from classics to contemporary.",
   },
   {
-    image: "indians2.png",
+    image: "/images/indians2.png",
     title: "Innovation",
     text: "Embracing technology to enhance the reading experience.",
   },
@@ -82,7 +82,7 @@ function Home() {
           playsInline
           className="absolute inset-0 w-full h-full object-cover"
         >
-          <source src="videobg1.mp4" type="video/mp4" />
+          <source src="/images/videobg1.mp4" type="video/mp4" />
         </video>
         <div className="absolute inset-0 bg-black/30"></div>
         <div className="absolute inset-0 flex items-center z-20 px-8 md:px-16">
@@ -102,7 +102,7 @@ function Home() {
       <header className="sticky top-0 z-50 bg-white shadow-sm py-3 px-6 flex flex-col md:flex-row items-center justify-between">
         <img
           onClick={() => navigate("/")}
-          src="dickson.png"
+          src="/images/dickson.png"
           alt="Dickson Lane"
           className="h-16 w-auto cursor-pointer mb-3 md:mb-0"
         />
@@ -137,12 +137,12 @@ function Home() {
               <h3 className="text-3xl md:text-2xl font-bold text-sky-700 mb-4 font-serif leading-tight">KAKAKI, THE MEDICINE WOMAN</h3>
             </div>
             <img
-              src="image1.png"
+              src="/images/image1.png"
               alt="Kakaki, The Medicine Woman"
               className="absolute inset-0 w-full h-[90%] object-contain group-hover:opacity-0 transition mt-5"
             />
             <img
-              src="dickson-book1.gif"
+              src="/images/dickson-book1.gif"
               alt="Preview"
               className="absolute inset-0 h-[70%] w-auto m-auto opacity-0 group-hover:opacity-100 transition"
             />
@@ -158,12 +158,12 @@ function Home() {
               <h3 className="text-3xl md:text-2xl font-bold text-sky-700 mb-4 font-serif leading-tight">10 LITTLE INDIANS</h3>
             </div>
             <img
-              src="image4.png"
+              src="/images/image4.png"
               alt="10 Little Indians"
               className="absolute inset-0 w-full h-full object-contain group-hover:opacity-0 transition"
             />
             <img
-              src="dickson-book2.gif"
+              src="/images/dickson-book2.gif"
               alt="Preview"
               className="absolute inset-0 h-[70%] w-auto m-auto opacity-0 group-hover:opacity-100 transition"
             />
@@ -373,7 +373,7 @@ function Home() {
     
     {/* Brand */}
     <div>
-      <img onClick={() => navigate('/')} src="dickson1.jpg" alt="Dickson Lane" className="h-12 mb-4 rounded-2xl" />
+      <img onClick={() => navigate('/')} src="/images/dickson1.jpg" alt="Dickson Lane" className="h-12 mb-4 rounded-2xl" />
       <p className="text-gray-300">
         Your gateway to exceptional books and reading experiences since 2010.
       </p>

@@ -5,7 +5,7 @@ const books = [
     id: 1,
     title: 'KAKAKI, THE MEDICINE WOMAN',
     author: 'DICKSON LANE',
-    image: '/image1.png',
+    image: '/images/image1.png',
     rating: 4.5,
     description: 'A haunting exploration of gender empowerment across native cultures in 19th century Canada.',
     formats: [
@@ -19,7 +19,7 @@ const books = [
     id: 2,
     title: 'THE 10 LITTLE INDIANS',
     author: 'DICKSON LANE',
-    image: '/image4.png',
+    image: '/images/image4.png',
     rating: 4.2,
     description: 'Learn from the Masters of Moviemaking about writing screenplays.',
     formats: [

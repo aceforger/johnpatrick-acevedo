@@ -5,18 +5,18 @@ function Navbar() {
     <nav className="bg-white">
       <ul className="flex list-none m-0 px-4 gap-2 md:justify-center md:gap-0 md:px-0">
         <NavItem 
-          iconSrc="./book.gif" 
+          iconSrc="./images/book.gif" 
           text="Book" 
           active
           path="/bookshop"
         />
         <NavItem 
-          iconSrc="./ebook.gif" 
+          iconSrc="./images/ebook.gif" 
           text="eBook" 
           path="/ebooks"
         />
         <NavItem 
-          iconSrc="./audio-book.gif" 
+          iconSrc="./images/audio-book.gif" 
           text="Audio Book" 
           path="/audiobooks"
         />

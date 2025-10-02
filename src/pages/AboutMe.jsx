@@ -6,55 +6,55 @@ import { useNavigate, useLocation } from 'react-router-dom';
 const galleryImages = [
   {
     id: 1,
-    src: "gallery1.png",
+    src: "/images/gallery1.png",
     // title: "At Oxford University",
     // description: "Dickson lecturing at his alma mater"
   },
   {
     id: 2,
-    src: "gallery2.png",
+    src: "/images/gallery2.png",
     // title: "Book Signing Event",
     // description: "Meeting readers in London"
   },
   {
     id: 3,
-    src: "gallery3.png",
+    src: "/images/gallery3.png",
     // title: "Writing Retreat",
     // description: "Working on his latest novel"
   },
   {
     id: 4,
-    src: "gallery4.png",
+    src: "/images/gallery4.png",
     // title: "Published Works",
     // description: "Collection of Dickson's books"
   },
   {
     id: 5,
-    src: "gallery5.png",
+    src: "/images/gallery5.png",
     // title: "Morning Routine",
     // description: "Reading with coffee at his home office"
   },
   {
     id: 6,
-    src: "gallery6.png",
+    src: "/images/gallery6.png",
     // title: "Literary Festival",
     // description: "Speaking at a literary event"
   },
   {
     id: 7,
-    src: "gallery7.png",
+    src: "/images/gallery7.png",
     // title: "On Set",
     // description: "Filming a documentary about his life"
   },
   {
     id: 8,
-    src: "gallery8.png",
+    src: "/images/gallery8.png",
     // title: "With Fans",
     // description: "Engaging with readers at a book fair"
   },
   {
     id: 9,
-    src: "gallery9.png",
+    src: "/images/gallery9.png",
     // title: "Inspiration",
     // description: "Nature walk that sparked a new story idea"
   },
@@ -277,15 +277,18 @@ const ImageGallery = () => {
 // ===== Book Trailer Component =====
 const BookTrailer = () => {
   const [isPlaying, setIsPlaying] = useState(false);
+  const [currentVideo, setCurrentVideo] = useState(null);
   
   // Function to handle playing the trailer
-  const playTrailer = () => {
+  const playTrailer = (videoSrc) => {
+    setCurrentVideo(videoSrc);
     setIsPlaying(true);
   };
   
   // Function to close the trailer
   const closeTrailer = () => {
     setIsPlaying(false);
+    setCurrentVideo(null);
   };
   
   return (
@@ -305,11 +308,11 @@ const BookTrailer = () => {
               {/* Video thumbnail/preview */}
               <div 
                 className="relative rounded-xl overflow-hidden shadow-md cursor-pointer group"
-                onClick={playTrailer}
+                onClick={() => playTrailer('/images/KAKAKI2.mp4')}
               >
                 {/* Thumbnail image */}
                 <img 
-                  src="/image1.png" 
+                  src="/images/image1.png" 
                   alt="Kakaki, The Medicine Woman Book Cover" 
                   className="w-full h-[50vh] object-contain p-4 transition-transform duration-700 group-hover:scale-105"
                 />
@@ -336,7 +339,7 @@ const BookTrailer = () => {
               <h3 className="text-2xl font-serif text-gray-800 mb-2">Kakaki, The Medicine Woman</h3>
               <p className="text-gray-600 mb-4">Now available in stores and online</p>
               <button 
-                onClick={playTrailer}
+                onClick={() => playTrailer('/images/KAKAKI2.mp4')}
                 className="inline-flex items-center px-5 py-2 bg-gradient-to-r from-blue-500 to-indigo-500 text-white rounded-full font-medium hover:shadow-lg transition-all duration-300"
               >
                 <svg className="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 20 20">
@@ -350,25 +353,31 @@ const BookTrailer = () => {
           {/* The 10 Little Indians */}
           <div className="bg-white rounded-xl shadow-lg p-6 transition-all duration-500 hover:shadow-xl hover:-translate-y-2">
             <div className="relative">
-              {/* Book cover with coming soon overlay */}
-              <div className="relative rounded-xl overflow-hidden shadow-md">
+              {/* Video thumbnail/preview */}
+              <div 
+                className="relative rounded-xl overflow-hidden shadow-md cursor-pointer group"
+                onClick={() => playTrailer('/images/tenLittle.mp4')}
+              >
                 {/* Thumbnail image */}
                 <img 
-                  src="/image4.png" 
+                  src="/images/image4.png" 
                   alt="The 10 Little Indians Book Cover" 
-                  className="w-full h-[50vh] object-contain p-4 grayscale opacity-80"
+                  className="w-full h-[50vh] object-contain p-4 transition-transform duration-700 group-hover:scale-105"
                 />
                 
-                {/* Coming soon overlay */}
-                <div className="absolute inset-0 bg-black/60 flex items-center justify-center">
-                  <div className="text-center p-4">
-                    <div className="bg-white/20 backdrop-blur-sm rounded-full p-3 inline-block mb-3">
-                      <svg className="w-12 h-12 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
-                      </svg>
-                    </div>
-                    <p className="text-white text-xl font-medium">Trailer Coming Soon</p>
+                {/* Play button overlay */}
+                <div className="absolute inset-0 bg-black/40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                  <div className="bg-white/90 p-6 rounded-full transform transition-transform duration-500 group-hover:scale-110">
+                    <svg className="w-16 h-16 text-orange-500" fill="currentColor" viewBox="0 0 20 20">
+                      <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z" clipRule="evenodd" />
+                    </svg>
                   </div>
+                </div>
+                
+                {/* Play text */}
+                <div className="absolute bottom-4 left-4 text-white">
+                  <p className="text-lg font-medium">Watch the Trailer</p>
+                  <p className="text-sm opacity-90">Click to play</p>
                 </div>
               </div>
             </div>
@@ -376,15 +385,15 @@ const BookTrailer = () => {
             {/* Book info */}
             <div className="mt-6 text-center">
               <h3 className="text-2xl font-serif text-gray-800 mb-2">The 10 Little Indians</h3>
-              <p className="text-gray-600 mb-4">Coming soon</p>
+              <p className="text-gray-600 mb-4">Now available</p>
               <button 
-                className="inline-flex items-center px-5 py-2 bg-gray-400 text-white rounded-full font-medium cursor-not-allowed"
-                disabled
+                onClick={() => playTrailer('/images/tenLittle.mp4')}
+                className="inline-flex items-center px-5 py-2 bg-gradient-to-r from-blue-500 to-indigo-500 text-white rounded-full font-medium hover:shadow-lg transition-all duration-300"
               >
-                <svg className="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                <svg className="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                  <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z" clipRule="evenodd" />
                 </svg>
-                Coming Soon
+                Watch Trailer
               </button>
             </div>
           </div>
@@ -414,14 +423,14 @@ const BookTrailer = () => {
             
             <div>
               <h4 className="text-xl font-medium text-gray-800 mb-3 flex items-center">
-                <svg className="w-5 h-5 mr-2 text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
+                <svg className="w-5 h-5 mr-2 text-blue-500" fill="currentColor" viewBox="0 0 20 20">
+                  <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z" clipRule="evenodd" />
                 </svg>
                 The 10 Little Indians
               </h4>
               <p className="text-gray-600">
-                Stay tuned for the trailer of this upcoming work. The 10 Little Indians promises to deliver
-                another captivating story from Dickson Lane, with themes that resonate with contemporary
+                Discover the trailer for this captivating work. The 10 Little Indians delivers another 
+                compelling story from Dickson Lane, with themes that resonate with contemporary
                 readers while maintaining the author's distinctive narrative style.
               </p>
             </div>
@@ -445,7 +454,7 @@ const BookTrailer = () => {
                 autoPlay
                 playsInline
               >
-                <source src="/KAKAKI.mp4" type="video/mp4" />
+                <source src={currentVideo} type="video/mp4" />
                 Your browser does not support the video tag.
               </video>
             </div>
@@ -477,7 +486,7 @@ function AboutMe() {
         {/* Background image */}
         <div className="absolute inset-0">
           <img 
-            src="/dlhome.jpg" 
+            src="/images/dlhome.jpg" 
             alt="Dickson Lane" 
             className="w-full h-full object-cover object-center"
           />
@@ -521,7 +530,7 @@ function AboutMe() {
           <div className="relative">
             <div className="relative rounded-xl overflow-hidden shadow-2xl">
               <img 
-                src="profile.jpg" 
+                src="/images/profile.jpg" 
                 alt="Dickson Lane" 
                 className="w-full h-auto object-cover transition-transform duration-700 hover:scale-105"
               />
