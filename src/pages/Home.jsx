@@ -8,7 +8,7 @@ const slides = [
   {
     image: "/images/laptop.png",
     title: "Our Story",
-    text: "Founded in 2010, Dickson Lane began as a small bookstore with big dreams.",
+    text: "Founded in 2010, Dickson Lane began his journey as an aspiring author with big dreams, a passion for storytelling. What started as a simple desire to share his imagination soon grew into a lifelong pursuit of creating meaningful stories that inspire and connect with readers around the world.",
   },
   {
     image: "/images/ebookk.png",
