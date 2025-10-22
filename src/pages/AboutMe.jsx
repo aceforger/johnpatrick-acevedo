@@ -95,12 +95,12 @@ const NavigationBar = () => {
               >
                 <FaUser className="inline mr-2" /> About
               </button>
-              <button 
+              {/* <button 
                 onClick={() => scrollToSection('press')}
                 className="text-gray-700 hover:text-blue-600 transition-colors duration-300"
               >
                 <FaNewspaper className="inline mr-2" /> Press
-              </button>
+              </button> */}
               {/* In the desktop navigation section, add: */}
               <button 
                 onClick={() => scrollToSection('trailer')}
@@ -143,12 +143,12 @@ const NavigationBar = () => {
               <FaUser className="inline mr-2" /> About
             </button>
 
-            <button 
+            {/* <button 
               onClick={() => scrollToSection('press')}
               className="block w-full text-left px-4 py-2 text-gray-700 hover:bg-gray-100"
             >
               <FaNewspaper className="inline mr-2" /> Press
-            </button>
+            </button> */}
              {/* In the mobile navigation section, add: */}
               <button 
                 onClick={() => scrollToSection('trailer')}
@@ -171,115 +171,115 @@ const NavigationBar = () => {
 
 
 // ===== Press Release Component =====
-const PressRelease = () => {
-  const [selectedRelease, setSelectedRelease] = useState(null);
-  const [isModalOpen, setIsModalOpen] = useState(false);
+// const PressRelease = () => {
+//   const [selectedRelease, setSelectedRelease] = useState(null);
+//   const [isModalOpen, setIsModalOpen] = useState(false);
 
-  const pressReleases = [
-    {
-      id: 1,
-      title: "Dickson Lane Releases Groundbreaking Novel 'Kakaki, The Medicine Woman'",
-      date: "March 15, 2024",
-      excerpt: "Acclaimed author Dickson Lane announces the release of his latest novel, blending historical depth with contemporary storytelling...",
-      fullContent: "Full press release content would go here...",
-      image: "/images/press1.jpg"
-    },
-    {
-      id: 2,
-      title: "Award Nomination for 'The 10 Little Indians'",
-      date: "February 28, 2024",
-      excerpt: "Dickson Lane's latest work receives critical acclaim and nomination for prestigious literary award...",
-      fullContent: "Full press release content would go here...",
-      image: "/images/press2.jpg"
-    },
-    {
-      id: 3,
-      title: "Upcoming Book Tour Announced",
-      date: "January 10, 2024",
-      excerpt: "Join Dickson Lane as he embarks on a nationwide book tour, featuring readings and signings...",
-      fullContent: "Full press release content would go here...",
-      image: "/images/press3.jpg"
-    }
-  ];
+//   const pressReleases = [
+//     {
+//       id: 1,
+//       title: "Dickson Lane Releases Groundbreaking Novel 'Kakaki, The Medicine Woman'",
+//       date: "March 15, 2024",
+//       excerpt: "Acclaimed author Dickson Lane announces the release of his latest novel, blending historical depth with contemporary storytelling...",
+//       fullContent: "Full press release content would go here...",
+//       image: "/images/press1.jpg"
+//     },
+//     {
+//       id: 2,
+//       title: "Award Nomination for 'The 10 Little Indians'",
+//       date: "February 28, 2024",
+//       excerpt: "Dickson Lane's latest work receives critical acclaim and nomination for prestigious literary award...",
+//       fullContent: "Full press release content would go here...",
+//       image: "/images/press2.jpg"
+//     },
+//     {
+//       id: 3,
+//       title: "Upcoming Book Tour Announced",
+//       date: "January 10, 2024",
+//       excerpt: "Join Dickson Lane as he embarks on a nationwide book tour, featuring readings and signings...",
+//       fullContent: "Full press release content would go here...",
+//       image: "/images/press3.jpg"
+//     }
+//   ];
 
-  const openModal = (release) => {
-    setSelectedRelease(release);
-    setIsModalOpen(true);
-    document.body.style.overflow = 'hidden';
-  };
+//   const openModal = (release) => {
+//     setSelectedRelease(release);
+//     setIsModalOpen(true);
+//     document.body.style.overflow = 'hidden';
+//   };
 
-  const closeModal = () => {
-    setIsModalOpen(false);
-    document.body.style.overflow = 'auto';
-  };
+//   const closeModal = () => {
+//     setIsModalOpen(false);
+//     document.body.style.overflow = 'auto';
+//   };
 
-  return (
-    <section id="press" className="py-20 bg-gradient-to-b from-white to-gray-50">
-      <div className="max-w-7xl mx-auto px-5">
-        <h2 className="text-center text-4xl font-serif text-gray-800 mb-16 relative">
-          <span className="relative inline-block">
-            Press Releases
-            <span className="absolute bottom-[-10px] left-0 w-full h-1 bg-gradient-to-r from-green-500 to-emerald-400"></span>
-          </span>
-        </h2>
+//   return (
+//     <section id="press" className="py-20 bg-gradient-to-b from-white to-gray-50">
+//       <div className="max-w-7xl mx-auto px-5">
+//         <h2 className="text-center text-4xl font-serif text-gray-800 mb-16 relative">
+//           <span className="relative inline-block">
+//             Press Releases
+//             <span className="absolute bottom-[-10px] left-0 w-full h-1 bg-gradient-to-r from-green-500 to-emerald-400"></span>
+//           </span>
+//         </h2>
         
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {pressReleases.map((release) => (
-            <div 
-              key={release.id}
-              className="bg-white rounded-xl shadow-lg overflow-hidden transition-all duration-500 hover:shadow-xl hover:-translate-y-2 cursor-pointer"
-              onClick={() => openModal(release)}
-            >
-              <div className="h-48 overflow-hidden">
-                <img 
-                  src={release.image} 
-                  alt={release.title}
-                  className="w-full h-full object-cover transition-transform duration-700 hover:scale-105"
-                />
-              </div>
-              <div className="p-6">
-                <div className="text-sm text-green-600 font-medium mb-2">{release.date}</div>
-                <h3 className="text-xl font-serif text-gray-800 mb-3 line-clamp-2">{release.title}</h3>
-                <p className="text-gray-600 leading-relaxed mb-4 line-clamp-3">{release.excerpt}</p>
-                <button className="text-green-600 font-medium hover:text-green-700 transition-colors duration-300">
-                  Read More →
-                </button>
-              </div>
-            </div>
-          ))}
-        </div>
+//         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+//           {pressReleases.map((release) => (
+//             <div 
+//               key={release.id}
+//               className="bg-white rounded-xl shadow-lg overflow-hidden transition-all duration-500 hover:shadow-xl hover:-translate-y-2 cursor-pointer"
+//               onClick={() => openModal(release)}
+//             >
+//               <div className="h-48 overflow-hidden">
+//                 <img 
+//                   src={release.image} 
+//                   alt={release.title}
+//                   className="w-full h-full object-cover transition-transform duration-700 hover:scale-105"
+//                 />
+//               </div>
+//               <div className="p-6">
+//                 <div className="text-sm text-green-600 font-medium mb-2">{release.date}</div>
+//                 <h3 className="text-xl font-serif text-gray-800 mb-3 line-clamp-2">{release.title}</h3>
+//                 <p className="text-gray-600 leading-relaxed mb-4 line-clamp-3">{release.excerpt}</p>
+//                 <button className="text-green-600 font-medium hover:text-green-700 transition-colors duration-300">
+//                   Read More →
+//                 </button>
+//               </div>
+//             </div>
+//           ))}
+//         </div>
 
-        {/* Modal for full press release */}
-        {isModalOpen && selectedRelease && (
-          <div className="fixed inset-0 bg-black/95 z-[1000] flex items-center justify-center p-5 backdrop-blur-sm">
-            <div className="bg-white rounded-xl max-w-4xl max-h-[90vh] overflow-y-auto">
-              <div className="relative">
-                <button 
-                  onClick={closeModal}
-                  className="absolute top-4 right-4 text-gray-500 hover:text-gray-700 text-2xl z-10"
-                >
-                  <FaTimes />
-                </button>
-                <img 
-                  src={selectedRelease.image} 
-                  alt={selectedRelease.title}
-                  className="w-full h-64 object-cover"
-                />
-              </div>
-              <div className="p-8">
-                <div className="text-green-600 font-medium mb-4">{selectedRelease.date}</div>
-                <h3 className="text-3xl font-serif text-gray-800 mb-6">{selectedRelease.title}</h3>
-                <div className="prose prose-lg max-w-none">
-                  <p className="text-gray-700 leading-relaxed">{selectedRelease.fullContent}</p>
-                </div>
-              </div>
-            </div>
-          </div>
-        )}
-      </div>
-    </section>
-  );
-};
+//         {/* Modal for full press release */}
+//         {isModalOpen && selectedRelease && (
+//           <div className="fixed inset-0 bg-black/95 z-[1000] flex items-center justify-center p-5 backdrop-blur-sm">
+//             <div className="bg-white rounded-xl max-w-4xl max-h-[90vh] overflow-y-auto">
+//               <div className="relative">
+//                 <button 
+//                   onClick={closeModal}
+//                   className="absolute top-4 right-4 text-gray-500 hover:text-gray-700 text-2xl z-10"
+//                 >
+//                   <FaTimes />
+//                 </button>
+//                 <img 
+//                   src={selectedRelease.image} 
+//                   alt={selectedRelease.title}
+//                   className="w-full h-64 object-cover"
+//                 />
+//               </div>
+//               <div className="p-8">
+//                 <div className="text-green-600 font-medium mb-4">{selectedRelease.date}</div>
+//                 <h3 className="text-3xl font-serif text-gray-800 mb-6">{selectedRelease.title}</h3>
+//                 <div className="prose prose-lg max-w-none">
+//                   <p className="text-gray-700 leading-relaxed">{selectedRelease.fullContent}</p>
+//                 </div>
+//               </div>
+//             </div>
+//           </div>
+//         )}
+//       </div>
+//     </section>
+//   );
+// };
 
 // ===== Gallery Component =====
 const ImageGallery = () => {
@@ -708,7 +708,7 @@ function AboutMe() {
       </div>
 
       {/* Press Release Section */}
-      <PressRelease />
+      {/* <PressRelease /> */}
 
       {/* Book Trailer Section */}
       <BookTrailer />
