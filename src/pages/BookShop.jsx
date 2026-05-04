@@ -9,11 +9,10 @@ const books = [
     rating: 4.5,
     description: 'A haunting exploration of gender empowerment across native cultures in 19th century Canada.',
     formats: [
-      { retailer: 'Amazon', link: 'https://www.amazon.com/dp/EXAMPLE2' },
-      { retailer: 'Ingram', link: 'https://www.ingramspark.com/EXAMPLE3' },
-      { retailer: 'Barnes & Noble', link: 'https://www.barnesandnoble.com/EXAMPLE4' }
+      { retailer: 'Amazon', link: 'https://www.amazon.com/Kakaki-Medicine-Woman-Dickson-Lane/dp/B0FSHMPW8Z/ref=sr_1_1?crid=2V8G10Z1XOVI2&dib=eyJ2IjoiMSJ9.Bi4VmTKbHR5mhU7-5gEhRLhTCbvyYeoYArY6sD6BeAU.qoxAhtyYBuwIIvMtyJGZdEA9Nug9AIWP6vDQ8Q3FXPw&dib_tag=se&keywords=KAKAKI%2C+THE+MEDICINE+WOMAN&qid=1763483569&s=books&sprefix=kakaki%2C+the+medicine+woman%2Cstripbooks-intl-ship%2C724&sr=1-1' },
+      { retailer: 'Barnes & Noble', link: 'https://www.barnesandnoble.com/w/kakaki-the-medicine-woman-dickson-lane/1148370933?ean=9798349466991' }
     ],
-    comingSoon: true
+    comingSoon: false
   },
   {
     id: 2,

@@ -343,27 +343,6 @@ function Home() {
       enjoy <span className="text-sky-500">exclusive offers</span>, and discover upcoming 
       <span className="text-sky-700"> literary events</span>.
     </p>
-
-    {/* Form */}
-    {/* <form className="flex flex-col sm:flex-row gap-4 max-w-xl mx-auto">
-      <input
-        type="email"
-        placeholder="Enter your email address"
-        className="flex-1 px-6 py-4 rounded-full border border-sky-200 focus:outline-none focus:ring-2 focus:ring-sky-400 text-gray-800 bg-white shadow-sm"
-        required
-      />
-      <button
-        type="submit"
-        className="bg-gradient-to-r from-sky-500 to-sky-600 hover:from-sky-600 hover:to-sky-700 text-white px-8 py-4 rounded-full font-semibold shadow-md transition"
-      >
-        Subscribe
-      </button>
-    </form> */}
-
-    {/* Privacy note */}
-    {/* <p className="text-sm text-sky-700 mt-6 italic">
-      ✦ We respect your privacy. Unsubscribe anytime.
-    </p> */}
   </div>
 </section>
 
@@ -402,10 +381,6 @@ function Home() {
     <div>
       <h4 className="border-b text-lg font-semibold mb-0 text-white">Connect</h4>
       <div className="flex gap-4 mb-4">
-        {/* Example social icon button */}
-        {/* <a href="#" className="bg-blue-800 hover:bg-blue-700 w-10 h-10 rounded-full flex items-center justify-center transition-colors">
-          <span className="sr-only">Facebook</span>
-        </a> */}
       </div>
       <p className="text-gray-300 text-sm">123 Book Street, Literary City, LC 12345</p>
       <p className="text-gray-300 text-sm">info@dicksonlane.com</p>
@@ -414,7 +389,8 @@ function Home() {
   
   {/* Bottom bar */}
   <div className="border-t border-blue-700 mt-10 pt-5 text-center text-gray-400 text-sm">
-    <p>© {new Date().getFullYear()} Dickson Lane. All rights reserved.</p>
+    <p>© 2025 Dickson Lane. All rights reserved.| Site by 411socials LLC</p>
+    {/* {new Date().getFullYear()} */}
   </div>
 </footer>
 {showPopup && <Popup onClose={() => setShowPopup(false)} />}

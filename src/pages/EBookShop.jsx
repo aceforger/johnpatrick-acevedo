@@ -1,32 +1,84 @@
-import React from "react";
+import React, { useState } from "react";
 
 const ebooks = [
   {
     id: 1,
     title: "KAKAKI, THE MEDICINE WOMAN",
     author: "DICKSON LANE",
-    price: 14.99,
-    image: "/images/image1.png",
+    image: "/images/image1.1.png",
     rating: 4.5,
-    formats: ["PDF", "EPUB", "MOBI"],
+    formats: ["EPUB"],
     description: "A haunting exploration of gender empowerment across native cultures in 19th century Canada.",
-      
-    comingSoon: true,
+    comingSoon: false,
+    stores: [
+      {
+        name: "Barnes & Noble",
+        link: "https://www.barnesandnoble.com/w/kakaki-the-medicine-woman-dickson-lane/1148323092",
+        icon: "📚"
+      },
+      {
+        name: "bol.",
+        link: "https://www.bol.com/nl/nl/p/kakaki-the-medicine-woman/9300000241093960/",
+        icon: "𝒃ol."
+      },
+      {
+        name: "Booktopia",
+        link: "https://www.booktopia.com.au/kakaki-the-medicine-woman-dickson-lane/ebook/9798349561344.html?srsltid=AfmBOooz_uM3pnfFU7owlvrM3vJzcRvYAEWQrViMcRnVi82sefvNSONe",
+        icon: "𝒃"
+      }
+    ]
   },
   {
     id: 2,
     title: "THE 10 LITTLE INDIANS",
     author: "DICKSON LANE",
-    price: 12.99,
     image: "/images/image4.png",
     rating: 4.2,
-    formats: ["PDF", "EPUB"],
+    formats: ["EPUB"],
     description: "Learn from the Masters of Moviemaking about writing screenplays.",
-    comingSoon: true,
+    comingSoon: false,
+    stores: [
+      {
+        name: "Kobo",
+        link: "https://www.kobo.com/ph/en/ebook/the-10-little-indians-of-successful-screenplays?srsltid=AfmBOopCYN4u4bAETBg2lZyP8q0sp-1f8sG-yb8_Svod_yhE3CbckI9v",
+        icon: "🔵"
+      },
+      {
+        name: "Everand",
+        link: "https://www.everand.com/book/892856975/The-10-Little-Indians-of-Successful-Screenplays-Lessons-from-the-Masters-of-Moviemaking",
+        icon: "&"
+      },
+      {
+        name: "Booktopia",
+        link: "https://www.booktopia.com.au/the-10-little-indians-of-successful-screenplays--dickson-lane/ebook/9798349519505.html?srsltid=AfmBOopv7eNCwyHvqw1O3G4lqi7Uto62fcesBgTPUR2IULyfp-DfyMe4",
+        icon: "𝒃"
+      }
+    ]
   },
 ];
 
 export default function EBookShop() {
+  const [selectedEbook, setSelectedEbook] = useState(null);
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  const handleShopNow = (ebook) => {
+    if (ebook.stores && !ebook.comingSoon) {
+      setSelectedEbook(ebook);
+      setIsModalOpen(true);
+    }
+  };
+
+  const handleStoreSelect = (storeLink) => {
+    window.open(storeLink, '_blank');
+    setIsModalOpen(false);
+    setSelectedEbook(null);
+  };
+
+  const closeModal = () => {
+    setIsModalOpen(false);
+    setSelectedEbook(null);
+  };
+
   return (
     <div className="min-h-screen bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-50">
       {/* Hero Section */}
@@ -39,9 +91,6 @@ export default function EBookShop() {
             Instantly access captivating ebooks across genres. Read anywhere,
             anytime, on any device.
           </p>
-          {/* <button className="mt-6 px-8 py-3 bg-white text-indigo-700 font-semibold rounded-xl shadow-md hover:bg-gray-100 transition">
-            Browse Collection
-          </button> */}
         </div>
         <div className="absolute inset-0 bg-black/20"></div>
       </div>
@@ -115,25 +164,12 @@ export default function EBookShop() {
                       ))}
                     </div>
 
-                    {/* Price + Button */}
-                    <div className="flex items-center justify-between">
-                      {ebook.comingSoon ? (
-                        <span className="text-lg font-bold text-gray-400">
-                          Coming Soon
-                        </span>
-                      ) : (
-                        <div>
-                          <span className="text-2xl font-bold text-gray-900">
-                            ${ebook.price.toFixed(2)}
-                          </span>
-                          <span className="ml-2 text-sm text-gray-400 line-through">
-                            ${(ebook.price * 1.4).toFixed(2)}
-                          </span>
-                        </div>
-                      )}
+                    {/* Button */}
+                    <div className="flex items-center justify-end">
                       <button
+                        onClick={() => handleShopNow(ebook)}
                         disabled={ebook.comingSoon}
-                        className={`px-4 py-2 text-sm font-semibold rounded-lg transition ${
+                        className={`px-6 py-3 text-sm font-semibold rounded-lg transition ${
                           ebook.comingSoon
                             ? "bg-gray-300 text-gray-500 cursor-not-allowed"
                             : "bg-indigo-600 text-white hover:bg-indigo-700"
@@ -185,29 +221,72 @@ export default function EBookShop() {
             ))}
           </div>
         </div>
-
-        {/* Newsletter */}
-        <div className="mt-24 bg-gradient-to-r from-indigo-600 to-blue-600 text-white rounded-2xl shadow-xl p-4 text-center">
-          <h2 className="text-2xl font-bold mb-2">Get Free EBook Samples</h2>
-          <p className="text-indigo-100 mb-6">
-            Subscribe to our newsletter for exclusive free chapters and updates.
-          </p>
-          <div className="max-w-md mx-auto flex flex-col sm:flex-row gap-3">
-            <input 
-               type="email" 
-               placeholder="Your email address" 
-               className="flex-1 px-5 py-3 rounded-full border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-300 text-gray-900"
-               required
-            />
-            <button className="px-6 py-3 bg-white text-indigo-700 font-semibold rounded-lg shadow hover:bg-gray-100 transition">
-              Get Samples
-            </button>
-          </div>
-          <p className="text-xs text-indigo-200 mt-3">
-            We respect your privacy. Unsubscribe anytime.
-          </p>
-        </div>
       </div>
+
+      {/* Store Selection Modal */}
+      {isModalOpen && selectedEbook && (
+        <div className="fixed inset-0 bg-black/30 backdrop-blur-sm flex items-center justify-center p-4 z-50">
+          <div className="bg-white rounded-2xl shadow-xl max-w-md w-full mx-auto">
+            {/* Modal Header */}
+            <div className="p-6 border-b border-gray-200">
+              <div className="flex items-center justify-between">
+                <h3 className="text-xl font-bold text-gray-900">
+                  Choose Store
+                </h3>
+                <button
+                  onClick={closeModal}
+                  className="text-gray-400 hover:text-gray-600 transition"
+                >
+                  <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                  </svg>
+                </button>
+              </div>
+              <p className="text-gray-600 mt-2">
+                Select where you'd like to purchase{" "}
+                <span className="font-semibold text-indigo-600">
+                  {selectedEbook.title}
+                </span>
+              </p>
+            </div>
+
+            {/* Store List */}
+            <div className="p-6">
+              <div className="space-y-3">
+                {selectedEbook.stores.map((store, index) => (
+                  <button
+                    key={index}
+                    onClick={() => handleStoreSelect(store.link)}
+                    className="w-full flex items-center justify-between p-4 border border-gray-200 rounded-lg hover:border-indigo-500 hover:bg-indigo-50 transition-all duration-200 group"
+                  >
+                    <div className="flex items-center space-x-3">
+                      <span className="text-2xl">{store.icon}</span>
+                      <div className="text-left">
+                        <div className="font-semibold text-gray-900 group-hover:text-indigo-700">
+                          {store.name}
+                        </div>
+                        <div className="text-xs text-gray-500">
+                          Available in {selectedEbook.formats.join(", ")}
+                        </div>
+                      </div>
+                    </div>
+                    <svg className="w-5 h-5 text-gray-400 group-hover:text-indigo-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                    </svg>
+                  </button>
+                ))}
+              </div>
+            </div>
+
+            {/* Modal Footer */}
+            <div className="p-4 border-t border-gray-200 bg-gray-50 rounded-b-2xl">
+              <p className="text-xs text-gray-500 text-center">
+                You'll be redirected to the selected store to complete your purchase
+              </p>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 }
