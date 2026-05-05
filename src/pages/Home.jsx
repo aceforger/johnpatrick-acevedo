@@ -1,55 +1,24 @@
 import { useState, useEffect } from "react";
-import { FaSearch, FaChevronLeft, FaChevronRight, FaPlay } from "react-icons/fa";
+import { FaSearch, FaChevronLeft, FaChevronRight, FaPlay, FaStar, FaQuoteLeft } from "react-icons/fa";
 import { useNavigate, useLocation } from "react-router-dom";
-import Navbar from "../components/Navbar";
-
-// Carousel slides
-const slides = [
-  {
-    image: "/images/laptop.png",
-    title: "Our Story",
-    text: "Founded in 2010, Dickson Lane began his journey as an aspiring author with big dreams, a passion for storytelling. What started as a simple desire to share his imagination soon grew into a lifelong pursuit of creating meaningful stories that inspire and connect with readers around the world.",
-  },
-  {
-    image: "/images/ebookk.png",
-    title: "Our Mission",
-    text: "To connect readers with books that inspire, educate, and entertain.",
-  },
-  {
-    image: "/images/bookdic.png",
-    title: "Our Team",
-    text: "A passionate group of book lovers dedicated to literary excellence.",
-  },
-  {
-    image: "/images/indiansdic.png",
-    title: "Our Selection",
-    text: "Curated collections for every taste, from classics to contemporary.",
-  },
-  {
-    image: "/images/indians2.png",
-    title: "Innovation",
-    text: "Embracing technology to enhance the reading experience.",
-  },
-];
 
 // Simple reusable popup
 function Popup({ onClose }) {
   return (
     <div className="fixed inset-0 flex items-center justify-center bg-black/50 backdrop-blur-sm z-50">
-  <div className="bg-white px-6 py-4 rounded-lg shadow-lg w-[240px] text-center">
-    <h2 className="text-lg font-semibold text-gray-800 mb-2">Coming Soon 🚀</h2>
-    <p className="text-gray-600 mb-3 text-sm leading-snug">
-      This feature is not available yet. Stay tuned!
-    </p>
-    <button
-      onClick={onClose}
-      className="bg-sky-500 text-white px-4 py-2 rounded-md font-semibold hover:bg-sky-600 transition text-sm"
-    >
-      Close
-    </button>
-  </div>
-</div>
-
+      <div className="bg-white px-6 py-4 rounded-lg shadow-lg w-[240px] text-center">
+        <h2 className="text-lg font-semibold text-gray-800 mb-2">Coming Soon 🚀</h2>
+        <p className="text-gray-600 mb-3 text-sm leading-snug">
+          This feature is not available yet. Stay tuned!
+        </p>
+        <button
+          onClick={onClose}
+          className="bg-gradient-to-r from-amber-600 to-amber-700 text-white px-4 py-2 rounded-md font-semibold hover:from-amber-700 hover:to-amber-800 transition text-sm"
+        >
+          Close
+        </button>
+      </div>
+    </div>
   );
 }
 
@@ -59,341 +28,382 @@ function Home() {
 
   const [currentSlide, setCurrentSlide] = useState(0);
   const [showPopup, setShowPopup] = useState(false);
-  const [setPopupBook] = useState(null);
   const [heroLoaded, setHeroLoaded] = useState(false);
+
+  // All books data
+  const books = [
+    {
+      id: 1,
+      title: "Bottomless Toothpaste Flats in Bruges",
+      subtitle: "A Poet's Memoir",
+      image: "/images/bottomless.png",
+      gif: "/images/bottomless.png",
+      description: "As a fan of mainstream Singer and Songwriter music, John Patrick Acevedo has become an expert in the dualistic creative process and passion involved in art.",
+      rating: 4.8
+    },
+    {
+      id: 2,
+      title: "SPIRIT NATION",
+      subtitle: "Poems From A Heretical Faith",
+      image: "/images/spirit.jpg",
+      gif: "/images/spirit.jpg",
+      description: "A bold exploration of faith, identity, and human reciprocity through the lens of Holy Bible Sociology. Available now through Synergy Press.",
+      rating: 4.9
+    },
+    {
+      id: 3,
+      title: "The Watch That Healed Waterloo",
+      subtitle: "A Gnostic Romance",
+      image: "/images/thewatch.png",
+      gif: "/images/thewatch.png",
+      description: "An exploration of strength, weakness, and the misconception that weakness draws pathos instead of ethos.",
+      rating: 4.7
+    },
+    {
+      id: 4,
+      title: "NAPOLEONIC CULMINATIONS",
+      subtitle: "A Holy Bible Sociology",
+      image: "/images/napoleonic.png",
+      gif: "/images/napoleonic.png",
+      description: "Speaking of the four elements of human nature — wind, water, earth and fire — and the duality of man.",
+      rating: 4.9
+    },
+    {
+      id: 5,
+      title: "Healing w/o Patient Suffering",
+      subtitle: "for Virginal Sole Distinction",
+      image: "/images/healing.png",
+      gif: "/images/healing.png",
+      description: "An ascetic romantic's quest for God and love, exploring the spirit from an animal magnetic dimension of human nature.",
+      rating: 4.6
+    },
+    {
+      id: 6,
+      title: "We're Watching Her Show",
+      subtitle: "For Bathroom Sails of the Starched Collar",
+      image: "/images/watching.png",
+      gif: "/images/watching.png",
+      description: "An eclectic collection exploring the theme of 'give and take' — a journey from loss, sadness, and acceptance.",
+      rating: 4.8
+    }
+  ];
+
+  // Truncate description function
+  const truncateDescription = (description, maxLength = 100) => {
+    if (description.length <= maxLength) return description;
+    return description.substring(0, maxLength) + '...';
+  };
 
   useEffect(() => {
     window.scrollTo(0, 0);
     setTimeout(() => setHeroLoaded(true), 300);
   }, [location.pathname]);
 
+  // Smooth scroll to section
+  const scrollToSection = (sectionId) => {
+    const section = document.getElementById(sectionId);
+    if (section) {
+      section.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   return (
-    <div className="bg-white text-gray-800 font-sans overflow-x-hidden">
-      {/* Hero Section */}
-      <div
-        className={`relative h-screen max-h-[900px] overflow-hidden transition-all duration-1000 ${
-          heroLoaded ? "opacity-100" : "opacity-0"
-        }`}
-      >
-        <video
-          autoPlay
-          loop
-          muted
-          playsInline
-          className="absolute inset-0 w-full h-full object-cover"
-        >
-          <source src="/images/videobg1.mp4" type="video/mp4" />
-        </video>
-        <div className="absolute inset-0 bg-black/30"></div>
-        <div className="absolute inset-0 flex items-center z-20 px-8 md:px-16">
-          <div className="max-w-2xl">
-            <h1 className="text-4xl md:text-6xl font-bold text-white mb-4 font-serif leading-tight">
-              Discover Your Next{" "}
-              <span className="text-blue-400">Literary Adventure</span>
+    <div className="bg-gradient-to-br from-sky-50 via-white to-amber-50 text-gray-800 font-sans overflow-x-hidden">
+      {/* Hero Section with Bronze/Sky Theme */}
+      <section id="hero" className="relative h-[800px] md:h-[900px] overflow-hidden bg-gradient-to-r from-sky-900 via-sky-800 to-amber-800">
+        <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/dark-matter.png')] opacity-10"></div>
+        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-sky-900/50"></div>
+        
+        {/* Animated bronze accents */}
+        <div className="absolute top-20 left-10 w-64 h-64 bg-amber-400/10 rounded-full blur-3xl animate-pulse"></div>
+        <div className="absolute bottom-10 right-10 w-80 h-80 bg-sky-400/10 rounded-full blur-3xl animate-pulse delay-1000"></div>
+        
+        <div className="relative h-full flex items-center justify-center px-4">
+          <div className="text-center max-w-4xl mx-auto">
+            <div className="inline-block mb-6 px-6 py-2 bg-amber-500/20 backdrop-blur-sm rounded-full border border-amber-400/30">
+              <span className="text-amber-300 font-semibold tracking-wide">✧ AWARD-WINNING POET ✧</span>
+            </div>
+            <h1 className="text-5xl md:text-7xl font-bold text-white mb-6 font-serif leading-tight">
+              Discover the Poetry of{" "}
+              <span className="bg-gradient-to-r from-sky-300 via-amber-300 to-sky-300 bg-clip-text text-transparent">
+                John Patrick Acevedo
+              </span>
             </h1>
-            <p className="text-lg text-gray-300 mb-8">
-              Explore our curated collection of books that inspire, educate, and entertain.
+            <p className="text-lg md:text-xl text-sky-100 mb-8 max-w-2xl mx-auto">
+              Explore a collection of poetry that challenges, inspires, and transforms — where words become timeless art.
             </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <button 
+                onClick={() => scrollToSection('featured-books')}
+                className="px-8 py-3 bg-gradient-to-r from-amber-600 to-amber-700 text-white rounded-full font-semibold hover:from-amber-700 hover:to-amber-800 transition-all shadow-lg hover:shadow-xl transform hover:-translate-y-0.5"
+              >
+                Explore Collections
+              </button>
+              <button 
+                onClick={() => navigate('/')}
+                className="px-8 py-3 bg-white/10 backdrop-blur-sm border border-white/30 text-white rounded-full font-semibold hover:bg-white/20 transition-all"
+              >
+                Home
+              </button>
+            </div>
           </div>
         </div>
-      </div>
+        
+        {/* Wave decoration */}
+        <div className="absolute bottom-0 left-0 right-0">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 120" className="w-full">
+            <path fill="#f0f9ff" fillOpacity="1" d="M0,64L80,69.3C160,75,320,85,480,80C640,75,800,53,960,48C1120,43,1280,53,1360,58.7L1440,64L1440,120L1360,120C1280,120,1120,120,960,120C800,120,640,120,480,120C320,120,160,120,80,120L0,120Z"></path>
+          </svg>
+        </div>
+      </section>
 
-      {/* Header with Navbar */}
-      <header className="sticky top-0 z-50 bg-white shadow-sm py-3 px-6 flex flex-col md:flex-row items-center justify-between">
+      {/* Header with Navbar - Bronze/Sky Styling */}
+      <header className="sticky top-0 z-50 bg-white/95 backdrop-blur-md shadow-md py-3 px-6 flex flex-col md:flex-row items-center justify-between border-b border-amber-200">
         <img
           onClick={() => navigate("/")}
-          src="/images/dickson.png"
-          alt="Dickson Lane"
-          className="h-16 w-auto cursor-pointer mb-3 md:mb-0"
+          src="/images/john-logo.png"
+          alt="John Patrick Acevedo"
+          className="h-16 w-auto cursor-pointer mb-3 md:mb-0 hover:opacity-80 transition"
         />
-        <Navbar />
-        <div className="relative w-full md:w-64">
+        <div className="relative w-full md:w-80">
           <input
             type="text"
-            placeholder="Search books, authors..."
-            className="w-full px-4 py-2 pr-10 rounded-full border border-gray-300 focus:outline-none focus:border-gray-500 transition"
+            placeholder="Search books, poems..."
+            className="w-full px-4 py-2 pr-10 rounded-full border border-amber-200 focus:outline-none focus:border-amber-400 focus:ring-2 focus:ring-amber-200 transition bg-amber-50/30"
           />
-          <FaSearch className="absolute right-3 top-2.5 text-gray-400" />
+          <FaSearch className="absolute right-3 top-2.5 text-amber-500" />
         </div>
       </header>
 
-      {/* Featured Books */}
-      <section className="py-12 px-6 bg-gradient-to-br from-blue-50 via-white-100 to-blue-300 text-center">
+      {/* Featured Books Section - FIXED DISPLAY */}
+      <section id="featured-books" className="py-16 px-6 bg-gradient-to-br from-sky-50 via-white to-amber-50 scroll-mt-20">
         <div className="text-center mb-14">
+          <div className="inline-block mb-3">
+            <span className="text-amber-600 text-sm font-semibold tracking-wider uppercase">✦ Curated Collection ✦</span>
+          </div>
           <h2 className="text-4xl md:text-5xl font-bold font-serif text-gray-900">
-            Featured <span className="text-sky-700">Books</span>
+            Featured <span className="bg-gradient-to-r from-sky-600 to-amber-600 bg-clip-text text-transparent">Poetry Collections</span>
           </h2>
-          <div className="w-24 h-1 bg-sky-700 mx-auto rounded-full mt-3"></div>
+          <div className="w-24 h-1 bg-gradient-to-r from-sky-600 to-amber-600 mx-auto rounded-full mt-4"></div>
+          <p className="text-gray-600 mt-4 max-w-2xl mx-auto">
+            Discover the complete collection of poetry by John Patrick Acevedo — each volume a journey into the depths of human experience
+          </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-10 max-w-7xl mx-auto">
-          {/* Book 1 */}
-          <div
-            onClick={() => navigate(`/bookdetails/1`)}
-            className="group relative rounded-2xl overflow-hidden shadow-xl cursor-pointer hover:-translate-y-2 transition-all h-[500px] bg-blue-100 "
-          >
-            <div className="absolute inset-0 bg-gradient-to-t from-blue/70 to-transparent z-10"></div>
-            <div className="absolute bottom-0 left-0 p-6 z-20">
-              <h3 className="text-3xl md:text-2xl font-bold text-sky-700 mb-4 font-serif leading-tight">KAKAKI, THE MEDICINE WOMAN</h3>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
+          {books.map((book) => (
+            <div
+              key={book.id}
+              onClick={() => navigate(`/bookdetails/${book.id}`)}
+              className="group relative rounded-2xl overflow-hidden shadow-xl cursor-pointer transition-all duration-500 hover:shadow-2xl bg-white border border-amber-100 h-[520px] flex flex-col"
+            >
+              {/* Bronze accent line */}
+              <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-sky-500 via-amber-500 to-sky-500 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left z-20"></div>
+              
+              {/* Image Container */}
+              <div className="relative h-64 bg-gradient-to-br from-sky-100 to-amber-100 flex items-center justify-center p-6 flex-shrink-0">
+                <img
+                  src={book.image}
+                  alt={book.title}
+                  className="max-h-full max-w-full object-contain transition-transform duration-500 group-hover:scale-105"
+                  onError={(e) => {
+                    e.currentTarget.src = 'https://via.placeholder.com/300x400?text=Book+Cover';
+                  }}
+                />
+              </div>
+              
+              {/* Content Container */}
+              <div className="p-6 flex-1 flex flex-col min-h-0">
+                <div className="flex items-center gap-1 mb-2 flex-shrink-0">
+                  {[...Array(5)].map((_, i) => (
+                    <FaStar key={i} className={`w-4 h-4 ${i < Math.floor(book.rating) ? 'text-amber-400' : 'text-gray-300'}`} />
+                  ))}
+                  <span className="text-xs text-gray-500 ml-2">{book.rating}</span>
+                </div>
+                <h3 className="text-xl md:text-2xl font-bold text-gray-900 mb-2 font-serif leading-tight group-hover:text-sky-700 transition-colors line-clamp-2 flex-shrink-0">
+                  {book.title}
+                </h3>
+                <p className="text-amber-600 text-sm font-medium mb-3 flex-shrink-0">{book.subtitle}</p>
+                <p className="text-gray-600 text-sm mb-4 line-clamp-3 flex-shrink-0">
+                  {truncateDescription(book.description, 100)}
+                </p>
+                <div className="mt-auto pt-2 flex-shrink-0">
+                  <span className="inline-flex items-center gap-2 text-sky-600 font-semibold text-sm group-hover:gap-3 transition-all">
+                    Read More <FaChevronRight className="w-3 h-3" />
+                  </span>
+                </div>
+              </div>
+              
+              {/* Hover overlay effect */}
+              <div className="absolute inset-0 bg-gradient-to-t from-sky-900/5 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"></div>
             </div>
-            <img
-              src="/images/image1.png"
-              alt="Kakaki, The Medicine Woman"
-              className="absolute inset-0 w-full h-[90%] object-contain group-hover:opacity-0 transition mt-5"
-            />
-            <img
-              src="/images/dickson-book1.gif"
-              alt="Preview"
-              className="absolute inset-0 h-[70%] w-auto m-auto opacity-0 group-hover:opacity-100 transition"
-            />
-          </div>
+          ))}
+        </div>
+      </section>
 
-          {/* Book 2 */}
-          <div
-            onClick={() => navigate(`/bookdetails/2`)}
-            className="group relative rounded-2xl overflow-hidden shadow-xl cursor-pointer hover:-translate-y-2 transition-all h-[500px] bg-blue-100 "
-          >
-            <div className="absolute inset-0 bg-gradient-to-t from-blue/70 to-transparent z-10"></div>
-            <div className="absolute bottom-0 left-0 p-6 z-20">
-              <h3 className="text-3xl md:text-2xl font-bold text-sky-700 mb-4 font-serif leading-tight">10 LITTLE INDIANS</h3>
+      {/* Author Spotlight Section */}
+      <section id="author-spotlight" className="py-20 px-6 bg-gradient-to-r from-sky-800 to-sky-900 relative overflow-hidden scroll-mt-20">
+        <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/black-scales.png')] opacity-5"></div>
+        <div className="absolute -top-40 -right-40 w-80 h-80 bg-amber-500/20 rounded-full blur-3xl"></div>
+        <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-sky-400/20 rounded-full blur-3xl"></div>
+        
+        <div className="max-w-6xl mx-auto relative z-10">
+          <div className="flex flex-col md:flex-row items-center gap-12">
+            <div className="md:w-1/2 text-center md:text-left">
+              <div className="inline-block mb-4 px-4 py-1 bg-amber-500/20 rounded-full">
+                <span className="text-amber-300 text-sm font-semibold">✦ ABOUT THE AUTHOR ✦</span>
+              </div>
+              <h2 className="text-4xl md:text-5xl font-bold text-white mb-6 font-serif">
+                John Patrick Acevedo
+              </h2>
+              <div className="w-20 h-1 bg-gradient-to-r from-amber-400 to-sky-400 mb-6 mx-auto md:mx-0"></div>
+              <p className="text-sky-100 text-lg leading-relaxed mb-6">
+                A voice that transcends boundaries, John Patrick Acevedo weaves together poetry, philosophy, and raw human emotion. His work explores the depths of faith, love, and the human condition with unprecedented honesty and artistry.
+              </p>
+              <div className="flex gap-4 justify-center md:justify-start">
+                <button 
+                  onClick={() => {
+                    navigate('/');
+                    setTimeout(() => {
+                      const aboutSection = document.getElementById('about');
+                      if (aboutSection) {
+                        aboutSection.scrollIntoView({ behavior: 'smooth' });
+                      }
+                    }, 100);
+                  }}
+                  className="px-6 py-2 bg-amber-600 text-white rounded-full font-semibold hover:bg-amber-700 transition shadow-lg"
+                >
+                  Read Biography
+                </button>
+                <button 
+                  onClick={() => setShowPopup(true)}
+                  className="px-6 py-2 border border-amber-400 text-amber-300 rounded-full font-semibold hover:bg-amber-400/10 transition"
+                >
+                  Watch Interviews
+                </button>
+              </div>
             </div>
-            <img
-              src="/images/image4.png"
-              alt="10 Little Indians"
-              className="absolute inset-0 w-full h-full object-contain group-hover:opacity-0 transition"
-            />
-            <img
-              src="/images/dickson-book2.gif"
-              alt="Preview"
-              className="absolute inset-0 h-[70%] w-auto m-auto opacity-0 group-hover:opacity-100 transition"
-            />
+            <div className="md:w-1/2 flex justify-center">
+              <div className="relative">
+                <div className="absolute -inset-4 bg-gradient-to-r from-amber-500 to-sky-500 rounded-2xl blur-xl opacity-50"></div>
+                <div className="relative w-64 h-64 md:w-80 md:h-80 rounded-2xl overflow-hidden border-4 border-amber-400/30 bg-gradient-to-br from-sky-700 to-sky-800 flex items-center justify-center">
+                  <img 
+                    src="/images/profile1.png" 
+                    alt="John Patrick Acevedo"
+                    className="w-full h-full object-cover"
+                    onError={(e) => {
+                      e.currentTarget.src = 'https://via.placeholder.com/400x400?text=John+Patrick+Acevedo';
+                    }}
+                  />
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </section>
 
-      {/* eBooks Section */}
-      <section className="py-12 px-6 bg-gradient-to-br from-blue-50 via-white-100 to-blue-300 text-center">
-        <h2 className="text-4xl md:text-5xl font-serif font-bold text-blue-900 mb-4">
-          Explore <span className="text-sky-500">EBooks</span>
-        </h2>
-        <p className="text-gray-600 mb-10">“Your Library, Anytime, Anywhere”</p>
-
-        <div className="flex justify-center gap-12">
-          {["Kakaki, The Medicine Woman", "10 Little Indians"].map((title, i) => (
-            <div key={i} className="relative w-64 h-96 group">
-              <div className="absolute inset-0 bg-gradient-to-br from-sky-50 to-blue-100 rounded-2xl shadow-xl p-6 flex flex-col justify-between border border-blue-200">
-                <div>
-                  <p className="text-xs uppercase text-sky-600 mb-3">Featured</p>
-                  <h3 className="text-2xl font-bold text-blue-900">{title}</h3>
-                  <p className="text-gray-500 text-sm">by Dickson Lane</p>
-                </div>
-                <div className="space-y-3">
-                  <button
-                    onClick={() => {
-                      setPopupBook(title);
-                      setShowPopup(true);
-                    }}
-                    className="w-full bg-sky-500 text-white py-2 rounded-lg font-semibold hover:bg-sky-600"
-                  >
-                    Read Now
-                  </button>
-                  <button
-                    onClick={() => {
-                      setPopupBook(title);
-                      setShowPopup(true);
-                    }}
-                    className="w-full border border-sky-500 text-sky-700 py-2 rounded-lg font-semibold hover:bg-sky-50"
-                  >
-                    Preview
-                  </button>
-                </div>
+      {/* Testimonials Section */}
+      <section id="testimonials" className="py-20 px-6 bg-white scroll-mt-20">
+        <div className="text-center mb-14">
+          <h2 className="text-4xl md:text-5xl font-bold font-serif text-gray-900">
+            Reader <span className="bg-gradient-to-r from-sky-600 to-amber-600 bg-clip-text text-transparent">Testimonials</span>
+          </h2>
+          <div className="w-24 h-1 bg-gradient-to-r from-sky-600 to-amber-600 mx-auto rounded-full mt-4"></div>
+        </div>
+        
+        <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8">
+          {[
+            { text: "A breathtaking journey through the human soul. Each poem resonates deeply and stays with you long after reading.", author: "Sarah Chen", role: "Poetry Critic" },
+            { text: "Acevedo's work is transformative. He captures the ineffable with words that seem to dance between worlds.", author: "Michael Torres", role: "Professor of Literature" },
+            { text: "This collection changed how I understand poetry. Raw, honest, and absolutely beautiful.", author: "Emma Watson", role: "Reader & Poet" }
+          ].map((testimonial, idx) => (
+            <div key={idx} className="bg-gradient-to-br from-sky-50 to-amber-50 p-8 rounded-2xl shadow-lg border border-amber-100 hover:shadow-xl transition">
+              <FaQuoteLeft className="text-amber-400 text-3xl mb-4 opacity-50" />
+              <p className="text-gray-700 leading-relaxed mb-6 italic">"{testimonial.text}"</p>
+              <div>
+                <p className="font-bold text-gray-900">{testimonial.author}</p>
+                <p className="text-sm text-amber-600">{testimonial.role}</p>
               </div>
             </div>
           ))}
         </div>
       </section>
 
-      {/* Audiobooks Section */}
-      <section className="py-12 px-6 bg-gradient-to-br from-blue-50 via-white-100 to-blue-300 text-center">
-        <h2 className="text-4xl md:text-5xl font-bold text-blue-600 mb-4 font-serif">
-          Listen <span className="text-sky-700">Audiobooks</span>
-        </h2>
-        <p className="text-lg text-blue-700 mb-10">
-          “Books You Can Hear, and Worlds You Can Feel.”
-        </p>
-        <div className="bg-white/70 p-8 rounded-2xl shadow-xl max-w-lg mx-auto border">
-          <div className="flex items-center justify-center gap-6 mb-6">
-            <button className="bg-sky-200 p-3 rounded-full">
-              <FaChevronLeft />
-            </button>
-            <div
+      {/* Newsletter Section */}
+      <section id="newsletter" className="py-16 px-6 bg-gradient-to-r from-sky-900 to-sky-800 scroll-mt-20">
+        <div className="max-w-4xl mx-auto text-center">
+          <h3 className="text-3xl md:text-4xl font-bold text-white mb-4 font-serif">
+            Join the Poetry Circle
+          </h3>
+          <p className="text-sky-100 mb-6">
+            Subscribe to receive exclusive poetry, updates, and special offers from John Patrick Acevedo.
+          </p>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center max-w-md mx-auto">
+            <input 
+              type="email" 
+              placeholder="Your email address"
+              className="px-6 py-3 rounded-full bg-white/10 border border-sky-300 text-white placeholder:text-sky-200 focus:outline-none focus:ring-2 focus:ring-amber-400"
+            />
+            <button 
               onClick={() => setShowPopup(true)}
-              className="w-20 h-20 flex items-center justify-center rounded-full bg-gradient-to-r from-sky-500 to-blue-600 text-white cursor-pointer shadow-lg"
+              className="px-8 py-3 bg-gradient-to-r from-amber-600 to-amber-700 text-white rounded-full font-semibold hover:from-amber-700 hover:to-amber-800 transition shadow-lg"
             >
-              <FaPlay className="text-2xl" />
-            </div>
-            <button className="bg-sky-200 p-3 rounded-full">
-              <FaChevronRight />
+              Subscribe
             </button>
-          </div>
-          <h4 className="font-semibold text-blue-900">Now Playing</h4>
-          <p className="text-sky-700 text-sm mb-3">Kakaki, The Medicine Woman — Chapter 5</p>
-          <div className="w-full bg-blue-200 h-1.5 rounded-full mb-2">
-            <div className="bg-gradient-to-r from-sky-500 to-blue-600 h-1.5 rounded-full w-[45%]"></div>
-          </div>
-          <div className="flex justify-between text-xs text-blue-500">
-            <span>12:45</span>
-            <span>27:30</span>
           </div>
         </div>
-        <button
-          onClick={() => navigate("/audiobooks")}
-          className="mt-10 bg-gradient-to-r from-sky-500 to-blue-600 text-white px-8 py-3 rounded-full shadow-md hover:scale-105 transition"
-        >
-          Browse Audiobook Library
-        </button>
       </section>
 
-       {/* About Us Carousel */}
-   <section className="relative py-8 px-6 md:px-12 bg-[url('/bookstore-bg.jpg')] bg-cover bg-center">
-  {/* Overlay */}
-<div className="absolute inset-0 bg-sky-300/40 "></div>
-
-  <div className="relative max-w-7xl mx-auto">
-    {/* Heading */}
-    <div className="text-center mb-16">
-      <h2 className="text-4xl md:text-5xl font-bold text-blue-600 mb-4 font-serif leading-tight">
-        Welcome to <span className="text-sky-600">Dickson Lane</span>
-      </h2>
-      <p className="text-sky-600 text-lg mt-4 max-w-2xl mx-auto">
-        A cozy bookstore where stories come alive and community thrives.
-      </p>
-    </div>
-
-    {/* Carousel */}
-    <div className="relative overflow-hidden rounded-2xl shadow-6xl">
-      <div
-        className="flex transition-transform duration-700 ease-in-out"
-        style={{ transform: `translateX(-${currentSlide * 100}%)` }}
-      >
-        {slides.map((slide, index) => (
-          <div key={index} className="flex-none w-full">
-            <div
-              className={`flex flex-col md:flex-row items-center h-[500px] p-10
-              ${index % 3 === 0 ? "bg-gradient-to-r from-blue-300 to-orange-200" : ""}
-              ${index % 3 === 1 ? "bg-gradient-to-r from-blue-300 to-green-300" : ""}
-              ${index % 3 === 2 ? "bg-gradient-to-r from-sky-300 to-violet-300" : ""}`}
-            >
-              {/* Image */}
-              <div className="w-full md:w-1/2 flex justify-center">
-                <img
-                  src={slide.image}
-                  alt={slide.title}
-                  className="rounded-lg shadow-lg max-h-80 object-cover hover:scale-105 transition-transform duration-500"
-                />
+      {/* Footer */}
+      <footer id="footer" className="bg-gradient-to-br from-sky-900 via-sky-800 to-sky-900 text-gray-100 py-10 px-4 md:px-8 relative overflow-hidden">
+        <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/dark-matter.png')] opacity-5"></div>
+        <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-8 relative z-10">
+          <div>
+            <img onClick={() => navigate('/')} src="/images/john-logo.png" alt="John Patrick Acevedo" className="h-12 mb-4 rounded-2xl cursor-pointer" />
+            <p className="text-sky-200 text-sm leading-relaxed">
+              Your gateway to exceptional poetry and literary experiences that transcend the ordinary.
+            </p>
+            <div className="flex gap-3 mt-4">
+              <div className="w-8 h-8 bg-amber-500/20 rounded-full flex items-center justify-center cursor-pointer hover:bg-amber-500/30 transition">
+                <span className="text-amber-400 text-xs">f</span>
               </div>
-
-              {/* Text Content */}
-              <div className="w-full md:w-1/2 mt-10 md:mt-0 md:pl-10 text-gray-900">
-                <h3 className="text-3xl md:text-4xl font-bold mb-4">
-                  {slide.title}
-                </h3>
-                <p className="text-lg text-gray-700 mb-6 leading-relaxed">
-                  {slide.text}
-                </p>
+              <div className="w-8 h-8 bg-amber-500/20 rounded-full flex items-center justify-center cursor-pointer hover:bg-amber-500/30 transition">
+                <span className="text-amber-400 text-xs">X</span>
+              </div>
+              <div className="w-8 h-8 bg-amber-500/20 rounded-full flex items-center justify-center cursor-pointer hover:bg-amber-500/30 transition">
+                <span className="text-amber-400 text-xs">in</span>
               </div>
             </div>
           </div>
-        ))}
-      </div>
-
-      {/* Navigation Arrows */}
-      <button
-        onClick={() =>
-          setCurrentSlide((prev) => (prev - 1 + slides.length) % slides.length)
-        }
-        className="absolute left-4 top-1/2 -translate-y-1/2 bg-gray-900/70 hover:bg-gray-900 text-white rounded-full w-12 h-12 flex items-center justify-center shadow-lg transition"
-      >
-        <FaChevronLeft />
-      </button>
-      <button
-        onClick={() => setCurrentSlide((prev) => (prev + 1) % slides.length)}
-        className="absolute right-4 top-1/2 -translate-y-1/2 bg-gray-900/70 hover:bg-gray-900 text-white rounded-full w-12 h-12 flex items-center justify-center shadow-lg transition"
-      >
-        <FaChevronRight />
-      </button>
-    </div>
-  </div>
-</section>
-
-
-
-
-      {/* Newsletter Section */}
-    <section className="relative py-8 px-6 md:px-12 bg-gradient-to-br from-[#e6f6ff] via-[#cceeff] to-[#b3e5ff]">
-  <div className="max-w-3xl mx-auto text-center">
-    {/* Title */}
-    <h2 className="text-4xl md:text-5xl font-bold mb-6 font-serif text-sky-900">
-      Join Our <span className="text-sky-600">Literary Community</span>
-    </h2>
-
-    {/* Subtitle */}
-    <p className="text-lg md:text-xl mb-10 text-sky-800 leading-relaxed max-w-2xl mx-auto">
-      Stay inspired with <span className="text-sky-600">new releases</span>, 
-      enjoy <span className="text-sky-500">exclusive offers</span>, and discover upcoming 
-      <span className="text-sky-700"> literary events</span>.
-    </p>
-  </div>
-</section>
-
-      {/* Footer */}
-     <footer className="bg-gradient-to-r from-[#1e3a8a] to-[#1e40af] text-gray-100 py-5 px-4 md:px-8">
-  <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-8">
-    
-    {/* Brand */}
-    <div>
-      <img onClick={() => navigate('/')} src="/images/dickson1.jpg" alt="Dickson Lane" className="h-12 mb-4 rounded-2xl" />
-      <p className="text-gray-300">
-        Your gateway to exceptional books and reading experiences since 2010.
-      </p>
-    </div>
-    
-    {/* Explore */}
-    <div>
-      <h4 className="text-lg border-b font-semibold mb-4 text-white">Explore</h4>
-      <ul className="space-y-2">
-        <li><a href="/bookshop" className="text-gray-300 hover:text-white transition-colors">Books</a></li>
-        <li><a href="/ebooks" className="text-gray-300 hover:text-white transition-colors">eBooks</a></li>
-        <li><a href="/audiobooks" className="text-gray-300 hover:text-white transition-colors">Audiobooks</a></li>
-      </ul>
-    </div>
-    
-    {/* Company */}
-    <div>
-      <h4 className="border-b text-lg font-semibold mb-4 text-white">Company</h4>
-      <ul className="space-y-2">
-        <li><a href="#" className="text-gray-300 hover:text-white transition-colors">About Us</a></li>
-        <li><a href="/contactus" className="text-gray-300 hover:text-white transition-colors">Contact</a></li>
-      </ul>
-    </div>
-    
-    {/* Connect */}
-    <div>
-      <h4 className="border-b text-lg font-semibold mb-0 text-white">Connect</h4>
-      <div className="flex gap-4 mb-4">
-      </div>
-      <p className="text-gray-300 text-sm">123 Book Street, Literary City, LC 12345</p>
-      <p className="text-gray-300 text-sm">info@dicksonlane.com</p>
-    </div>
-  </div>
-  
-  {/* Bottom bar */}
-  <div className="border-t border-blue-700 mt-10 pt-5 text-center text-gray-400 text-sm">
-    <p>© 2025 Dickson Lane. All rights reserved.| Site by 411socials LLC</p>
-    {/* {new Date().getFullYear()} */}
-  </div>
-</footer>
-{showPopup && <Popup onClose={() => setShowPopup(false)} />}
+          <div>
+            <h4 className="text-lg font-semibold mb-4 text-white border-l-3 border-amber-500 pl-3">Explore</h4>
+            <ul className="space-y-2 text-sm">
+              <li><button onClick={() => scrollToSection('featured-books')} className="text-sky-200 hover:text-amber-300 transition-colors">Poetry Collections</button></li>
+              <li><button onClick={() => setShowPopup(true)} className="text-sky-200 hover:text-amber-300 transition-colors">New Releases</button></li>
+              <li><button onClick={() => setShowPopup(true)} className="text-sky-200 hover:text-amber-300 transition-colors">Award Winners</button></li>
+            </ul>
+          </div>
+          <div>
+            <h4 className="text-lg font-semibold mb-4 text-white border-l-3 border-amber-500 pl-3">Company</h4>
+            <ul className="space-y-2 text-sm">
+              <li><button onClick={() => scrollToSection('author-spotlight')} className="text-sky-200 hover:text-amber-300 transition-colors">About Us</button></li>
+              <li><a href="" className="text-sky-200 hover:text-amber-300 transition-colors">Contact</a></li>
+              <li><button onClick={() => setShowPopup(true)} className="text-sky-200 hover:text-amber-300 transition-colors">Privacy Policy</button></li>
+            </ul>
+          </div>
+          <div>
+            <h4 className="text-lg font-semibold mb-4 text-white border-l-3 border-amber-500 pl-3">Connect</h4>
+            <p className="text-sky-200 text-sm"></p>
+            <p className="text-sky-200 text-sm"></p>
+            <p className="text-sky-200 text-sm mt-2"></p>
+          </div>
+        </div>
+        <div className="border-t border-sky-700 mt-10 pt-6 text-center text-sky-300 text-sm relative z-10">
+          <p>© 2025 John Patrick Acevedo | Synergy Press. All rights reserved.</p>
+        </div>
+      </footer>
+      
+      {showPopup && <Popup onClose={() => setShowPopup(false)} />}
     </div>
   );
 }

@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { FaTimes } from 'react-icons/fa';
+import { FaTimes, FaNewspaper, FaCalendarAlt, FaUser, FaBookOpen } from 'react-icons/fa';
 
 const PressRelease = ({ pressData }) => {
   const [selectedRelease, setSelectedRelease] = useState(null);
@@ -63,48 +63,65 @@ const PressRelease = ({ pressData }) => {
   };
 
   return (
-    <section id="press" className="py-20 bg-gradient-to-b from-white to-gray-50">
+    <section id="press" className="py-20 bg-gradient-to-br from-sky-50 via-white to-amber-50">
       <div className="max-w-7xl mx-auto px-5">
-        <h2 className="text-center text-4xl font-serif text-gray-800 mb-16 relative">
-          <span className="relative inline-block">
-            Press Release
-            <span className="absolute bottom-[-10px] left-0 w-full h-1 bg-gradient-to-r from-blue-500 to-indigo-400"></span>
-          </span>
-        </h2>
+        {/* Section Header */}
+        <div className="text-center mb-16">
+          <div className="inline-block mb-3">
+            <span className="text-amber-600 text-sm font-semibold tracking-wider uppercase">✦ Latest News ✦</span>
+          </div>
+          <h2 className="text-4xl md:text-5xl font-serif text-gray-800 relative inline-block">
+            <span className="relative">
+              Press <span className="bg-gradient-to-r from-sky-600 to-amber-600 bg-clip-text text-transparent">Release</span>
+              <span className="absolute bottom-[-10px] left-0 w-full h-1 bg-gradient-to-r from-sky-500 to-amber-500 rounded-full"></span>
+            </span>
+          </h2>
+          <p className="text-gray-600 mt-4 max-w-2xl mx-auto">
+            Official announcements and media coverage from Synergy Press
+          </p>
+        </div>
         
         <div className="max-w-3xl mx-auto">
           {pressReleases.map((release) => (
             <div 
               key={release.id}
-              className="bg-white rounded-xl shadow-lg overflow-hidden transition-all duration-500 hover:shadow-xl hover:-translate-y-2 cursor-pointer group"
+              className="bg-white rounded-2xl shadow-xl overflow-hidden transition-all duration-500 hover:shadow-2xl hover:-translate-y-2 cursor-pointer group border border-amber-100"
               onClick={() => openModal(release)}
             >
-              <div className="h-96 overflow-hidden relative bg-gradient-to-br from-indigo-50 to-blue-50">
+              {/* Bronze accent line */}
+              <div className="h-1 bg-gradient-to-r from-sky-500 via-amber-500 to-sky-500 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left"></div>
+              
+              <div className="h-96 overflow-hidden relative bg-gradient-to-br from-sky-100 to-amber-100">
                 <img 
                   src={release.image} 
                   alt={release.title}
                   className="w-full h-full object-contain p-8 transition-transform duration-700 group-hover:scale-105"
                 />
                 <div className="absolute top-4 left-4">
-                  <span className="px-3 py-1 text-xs font-medium rounded-full bg-blue-100 text-blue-800">
-                    Poetry Collection
+                  <span className="px-3 py-1 text-xs font-medium rounded-full bg-gradient-to-r from-amber-500 to-amber-600 text-white shadow-md">
+                    <FaBookOpen className="inline mr-1 text-xs" /> Poetry Collection
                   </span>
                 </div>
-                <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent p-6">
-                  <h3 className="text-xl font-serif text-white line-clamp-2">
+                <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-sky-900/90 via-sky-900/50 to-transparent p-6">
+                  <h3 className="text-xl font-serif text-white line-clamp-2 group-hover:text-amber-300 transition-colors">
                     {release.title}
                   </h3>
                 </div>
               </div>
               <div className="p-6">
                 <div className="flex items-center justify-between mb-3">
-                  <div className="text-sm text-green-600 font-medium">{release.date}</div>
-                  <div className="text-xs text-gray-500 font-medium">
+                  <div className="flex items-center gap-2 text-sm text-amber-600 font-medium">
+                    <FaCalendarAlt className="text-amber-500" />
+                    {release.date}
+                  </div>
+                  <div className="flex items-center gap-2 text-xs text-gray-500 font-medium bg-amber-50 px-3 py-1 rounded-full">
+                    <FaUser className="text-amber-500" />
                     {release.author}
                   </div>
                 </div>
                 <p className="text-gray-600 leading-relaxed mb-5 line-clamp-3">{release.excerpt}</p>
-                <button className="w-full py-3 bg-gradient-to-r from-blue-500 to-indigo-400 text-white font-medium rounded-lg transition-all duration-300 hover:opacity-90">
+                <button className="w-full py-3 bg-gradient-to-r from-amber-600 to-sky-600 text-white font-medium rounded-lg transition-all duration-300 hover:shadow-lg hover:opacity-90 flex items-center justify-center gap-2 group">
+                  <FaNewspaper className="group-hover:rotate-12 transition" />
                   Read Full Press Release
                 </button>
               </div>
@@ -112,73 +129,66 @@ const PressRelease = ({ pressData }) => {
           ))}
         </div>
 
-        {/* Modal */}
+        {/* Modal - Bronze/Sky Theme */}
         {isModalOpen && selectedRelease && (
           <div className="fixed inset-0 bg-black/95 z-[1000] flex items-center justify-center p-5 backdrop-blur-sm">
-            <div className="bg-white rounded-xl max-w-4xl w-full max-h-[90vh] overflow-y-auto">
+            <div className="bg-white rounded-2xl max-w-4xl w-full max-h-[90vh] overflow-y-auto">
               <div className="relative">
                 <button 
                   onClick={closeModal}
-                  className="absolute top-6 right-6 text-white hover:text-gray-300 text-2xl z-10 bg-black/30 rounded-full p-2"
+                  className="absolute top-6 right-6 text-white hover:text-amber-300 text-2xl z-10 bg-black/30 rounded-full p-2 transition-all hover:bg-amber-600/50"
                 >
                   <FaTimes />
                 </button>
-                <div className="h-64 bg-gradient-to-r from-blue-500 to-indigo-400 relative overflow-hidden">
+                <div className="h-64 bg-gradient-to-r from-sky-600 via-sky-500 to-amber-500 relative overflow-hidden">
+                  {/* Animated background effect */}
+                  <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/dark-matter.png')] opacity-10"></div>
+                  <div className="absolute top-10 right-10 w-32 h-32 bg-amber-400/20 rounded-full blur-3xl animate-pulse"></div>
+                  <div className="absolute bottom-10 left-10 w-32 h-32 bg-sky-400/20 rounded-full blur-3xl animate-pulse delay-1000"></div>
+                  
                   <img 
                     src={selectedRelease.image} 
                     alt={selectedRelease.title}
-                    className="w-full h-full object-contain bg-gradient-to-r from-blue-600 to-indigo-500 p-6"
+                    className="w-full h-full object-contain bg-gradient-to-r from-sky-600 to-amber-500 p-6 relative z-10"
                   />
-                  <div className="absolute inset-0 flex items-center justify-center bg-black/30">
+                  <div className="absolute inset-0 flex items-center justify-center bg-black/40">
                     <div className="text-center p-5">
-                      <div className="text-white/90 text-sm mb-2">{selectedRelease.date}</div>
-                      <h3 className="text-2xl font-serif text-white mb-2">{selectedRelease.title}</h3>
-                      <div className="text-emerald-200">by {selectedRelease.author}</div>
+                      <div className="flex items-center justify-center gap-2 text-amber-200 text-sm mb-2">
+                        <FaCalendarAlt />
+                        {selectedRelease.date}
+                      </div>
+                      <h3 className="text-2xl font-serif text-white mb-2 max-w-2xl">{selectedRelease.title}</h3>
+                      <div className="inline-flex items-center gap-2 px-4 py-1 bg-amber-500/30 backdrop-blur-sm rounded-full text-amber-100 text-sm">
+                        <FaUser size={12} />
+                        by {selectedRelease.author}
+                      </div>
                     </div>
                   </div>
                 </div>
               </div>
               <div className="p-8">
                 <div 
-                  className="prose prose-lg max-w-none"
+                  className="prose prose-lg max-w-none prose-headings:text-sky-700 prose-headings:font-serif prose-strong:text-amber-700 prose-a:text-amber-600 prose-em:text-sky-600"
                   dangerouslySetInnerHTML={renderHTML(selectedRelease.fullContent)}
                 />
-                <div className="mt-8 pt-6 border-t border-gray-200">
-                  <button onClick={closeModal} className="text-blue-600 hover:text-blue-700">
+                <div className="mt-8 pt-6 border-t border-amber-200 flex justify-between items-center">
+                  <button 
+                    onClick={closeModal} 
+                    className="text-amber-600 hover:text-amber-700 font-semibold flex items-center gap-2 transition-colors"
+                  >
                     ← Back to Press Release
+                  </button>
+                  <button 
+                    onClick={() => window.open('/featured', '_blank')}
+                    className="px-4 py-2 bg-gradient-to-r from-amber-600 to-sky-600 text-white rounded-lg text-sm font-semibold hover:shadow-lg transition"
+                  >
+                    Explore the Book
                   </button>
                 </div>
               </div>
             </div>
           </div>
         )}
-
-        {/* Contact Section - Glasslink Solutions */}
-        {/* <div className="mt-16 text-center max-w-2xl mx-auto">
-          <div className="bg-gradient-to-r from-blue-50 to-indigo-50 rounded-xl p-8 border border-blue-100">
-            <h3 className="text-2xl font-serif text-gray-800 mb-4">Media Inquiries</h3>
-            <p className="text-gray-600 mb-6">
-              Editors: For review copies or interview requests, contact Glasslink Solutions, LLC
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-              <a 
-                href="tel:+18337887552" 
-                className="inline-flex items-center px-6 py-3 bg-blue-600 text-white font-medium rounded-lg hover:bg-blue-700"
-              >
-                📞 (833) 788-7552
-              </a>
-              <a 
-                href="mailto:mia.glasslinksolutions@gmail.com" 
-                className="inline-flex items-center px-6 py-3 border-2 border-blue-600 text-blue-600 font-medium rounded-lg hover:bg-blue-50"
-              >
-                ✉️ mia.glasslinksolutions@gmail.com
-              </a>
-            </div>
-            <p className="text-xs text-gray-500 mt-4">
-              Synergy Press | Guaynabo, Puerto Rico
-            </p>
-          </div>
-        </div> */}
       </div>
     </section>
   );
