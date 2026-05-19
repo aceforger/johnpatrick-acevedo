@@ -1,5 +1,5 @@
 import React, { useEffect, useRef } from 'react';
-import { FaBookOpen, FaQuoteLeft, FaStar, FaAward, FaMusic, FaFilm, FaUsers } from 'react-icons/fa';
+import { FaBookOpen, FaQuoteLeft, FaStar, FaAward, FaMusic, FaFilm, FaUsers, FaEnvelope, FaTwitter, FaInstagram, FaFacebook, FaYoutube } from 'react-icons/fa';
 import { useNavigate, useLocation } from 'react-router-dom';
 
 // Import components
@@ -199,6 +199,129 @@ function AboutMe() {
 
       {/* Gallery Section */}
       <ImageGallery />
+
+      {/* Footer Section */}
+      <footer className="bg-gradient-to-br from-gray-900 via-sky-900 to-amber-900 text-white pt-16 pb-8">
+        <div className="max-w-7xl mx-auto px-5">
+          {/* Launch Portal Button */}
+          <div className="mt-6 flex justify-center mb-16">
+            <a
+              href="https://buy.stripe.com/7sY5kEdVm6vNfRU8Ey2kw07"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="
+                bg-gradient-to-r from-yellow-400 via-yellow-300 to-yellow-500
+                text-black text-2xl font-bold py-8 px-26 rounded-full
+                shadow-2xl
+                transform transition-all duration-300
+                hover:scale-105 hover:shadow-yellow-400/50
+                animate-pulse
+              "
+            >
+              Launch & Go-Live Portal
+            </a>
+          </div>
+
+          {/* Footer Content Grid */}
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-12">
+            {/* Brand Column */}
+            <div className="space-y-4">
+              <h3 className="text-2xl font-serif bg-gradient-to-r from-amber-400 to-sky-400 bg-clip-text text-transparent">
+                John Patrick Acevedo
+              </h3>
+              <p className="text-gray-300 text-sm">
+                Poet, Publisher, and Performer — weaving language, faith, and human nature into verse and vision.
+              </p>
+              <div className="flex space-x-4 pt-2">
+                <a href="#" className="text-gray-400 hover:text-amber-400 transition-colors duration-300">
+                  <FaTwitter size={20} />
+                </a>
+                <a href="#" className="text-gray-400 hover:text-amber-400 transition-colors duration-300">
+                  <FaInstagram size={20} />
+                </a>
+                <a href="#" className="text-gray-400 hover:text-amber-400 transition-colors duration-300">
+                  <FaFacebook size={20} />
+                </a>
+                <a href="#" className="text-gray-400 hover:text-amber-400 transition-colors duration-300">
+                  <FaYoutube size={20} />
+                </a>
+              </div>
+            </div>
+
+            {/* Quick Links */}
+            <div>
+              <h4 className="text-lg font-semibold mb-4 text-amber-400">Quick Links</h4>
+              <ul className="space-y-2">
+                <li>
+                  <button onClick={() => navigateToHomeSection('hero')} className="text-gray-300 hover:text-amber-400 transition-colors duration-300">
+                    Home
+                  </button>
+                </li>
+                <li>
+                  <button onClick={() => navigateToHomeSection('about')} className="text-gray-300 hover:text-amber-400 transition-colors duration-300">
+                    About
+                  </button>
+                </li>
+                <li>
+                  <button onClick={() => navigate('/shop')} className="text-gray-300 hover:text-amber-400 transition-colors duration-300">
+                    Shop
+                  </button>
+                </li>
+                <li>
+                  <button onClick={() => navigate('/events')} className="text-gray-300 hover:text-amber-400 transition-colors duration-300">
+                    Events
+                  </button>
+                </li>
+                <li>
+                  <button onClick={() => navigate('/contact')} className="text-gray-300 hover:text-amber-400 transition-colors duration-300">
+                    Contact
+                  </button>
+                </li>
+              </ul>
+            </div>
+
+            {/* Works */}
+            <div>
+              <h4 className="text-lg font-semibold mb-4 text-amber-400">Published Works</h4>
+              <ul className="space-y-2">
+                <li className="text-gray-300 text-sm">Synergy Press Books (11 titles)</li>
+                <li className="text-gray-300 text-sm">The Mad City Coffee Reading (CD)</li>
+                <li className="text-gray-300 text-sm">Holy Bible Sociology! (Film Short)</li>
+                <li className="text-gray-300 text-sm">Video Poems & Documentary</li>
+              </ul>
+            </div>
+
+            {/* Contact */}
+            <div>
+              <h4 className="text-lg font-semibold mb-4 text-amber-400">Connect</h4>
+              <ul className="space-y-2">
+                <li className="flex items-center gap-2 text-gray-300 text-sm">
+                  <FaEnvelope className="text-amber-400" />
+                  <a href="mailto:contact@johnpatrickacevedo.com" className="hover:text-amber-400 transition">
+                    contact@johnpatrickacevedo.com
+                  </a>
+                </li>
+                <li className="text-gray-300 text-sm">
+                  <span className="text-amber-400">✧</span> Available for readings & events
+                </li>
+                <li className="text-gray-300 text-sm">
+                  <span className="text-amber-400">✧</span> Synergy Press Books and Media
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          {/* Bottom Bar */}
+          <div className="border-t border-gray-800 pt-8 mt-8 text-center">
+            <p className="text-gray-400 text-sm">
+              © {new Date().getFullYear()} John Patrick Acevedo — Synergy Press Books and Media. All rights reserved.
+            </p>
+            <p className="text-gray-500 text-xs mt-2">
+              Poet • Publisher • Performer
+            </p>
+          </div>
+        </div>
+      </footer>
 
       {/* Floating CTA Button - Bronze/Sky Theme */}
       {/* <button 
